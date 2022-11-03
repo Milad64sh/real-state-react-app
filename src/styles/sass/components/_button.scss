@@ -1,0 +1,27 @@
+button {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  letter-spacing: inherit;
+  color: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  padding: 0;
+}
+.button {
+  font-weight: 500;
+  font-size: 2rem;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $spacing-sm / 2;
+  cursor: pointer;
+  box-shadow: 0 0 0.5em $color-primary;
+
+  &:active {
+    transform: scale(0.98);
+  }
+  &:hover {
+    box-shadow: 0 0 0.75em 0 $color-primary;
+  }
+}

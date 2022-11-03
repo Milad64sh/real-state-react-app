@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ContactUs from './pages/ContactUs';
+import Buy from './pages/Buy';
+import Rent from './pages/Rent';
 function App() {
   return (
     <>
@@ -16,6 +18,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/buy' element={<Buy />} />
+          <Route path='/rent' element={<Rent />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/contact-us' element={<ContactUs />} />

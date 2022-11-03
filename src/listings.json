@@ -2,6 +2,7 @@
   "listings": [
     {
       "name": "Beautiful Stratford Condo",
+      "propertyType": "houses",
       "type": "rent",
       "userRef": "ID OF A USER",
       "bedrooms": 2,
@@ -21,6 +22,7 @@
     },
     {
       "name": "Flowery Branch Beauty",
+      "propertyType": "flats",
       "type": "sale",
       "userRef": "ID OF A USER",
       "bedrooms": 4,
@@ -39,6 +41,7 @@
     },
     {
       "name": "Brand New Cincinnati Home",
+      "propertyType": "houses",
       "type": "sale",
       "userRef": "ID OF A USER",
       "bedrooms": 4,
@@ -58,6 +61,7 @@
     },
     {
       "name": "Classy Home In Clayton",
+      "propertyType": "bungalows",
       "type": "sale",
       "userRef": "ID OF A USER",
       "bedrooms": 4,
@@ -94,87 +98,11 @@
       "timestamp": "00:00:00"
     },
     {
-      "name": "Modern 3BR Apartment In FL",
+      "name": "4BR Apartment In FL",
       "type": "rent",
       "userRef": "ID OF A USER",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "parking": true,
-      "furnished": true,
-      "offer": true,
-      "regularPrice": 2300,
-      "discountedPrice": 1900,
-      "location": "11 Buttonwood Street Fort Lauderdale, FL 33308",
-      "geolocation": {
-        "lat": "26.209080",
-        "lng": "-80.112100"
-      },
-      "imageUrls": [],
-      "timestamp": "00:00:00"
-    },
-    {
-      "name": "Modern 3BR Apartment In FL",
-      "type": "rent",
-      "userRef": "ID OF A USER",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "parking": true,
-      "furnished": true,
-      "offer": true,
-      "regularPrice": 2300,
-      "discountedPrice": 1900,
-      "location": "11 Buttonwood Street Fort Lauderdale, FL 33308",
-      "geolocation": {
-        "lat": "26.209080",
-        "lng": "-80.112100"
-      },
-      "imageUrls": [],
-      "timestamp": "00:00:00"
-    },
-    {
-      "name": "Modern 3BR Apartment In FL",
-      "type": "rent",
-      "userRef": "ID OF A USER",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "parking": true,
-      "furnished": true,
-      "offer": true,
-      "regularPrice": 2300,
-      "discountedPrice": 1900,
-      "location": "11 Buttonwood Street Fort Lauderdale, FL 33308",
-      "geolocation": {
-        "lat": "26.209080",
-        "lng": "-80.112100"
-      },
-      "imageUrls": [],
-      "timestamp": "00:00:00"
-    },
-    {
-      "name": "Modern 3BR Apartment In FL",
-      "type": "rent",
-      "userRef": "ID OF A USER",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "parking": true,
-      "furnished": true,
-      "offer": true,
-      "regularPrice": 2300,
-      "discountedPrice": 1900,
-      "location": "11 Buttonwood Street Fort Lauderdale, FL 33308",
-      "geolocation": {
-        "lat": "26.209080",
-        "lng": "-80.112100"
-      },
-      "imageUrls": [],
-      "timestamp": "00:00:00"
-    },
-    {
-      "name": "Modern 3BR Apartment In FL",
-      "type": "rent",
-      "userRef": "ID OF A USER",
-      "bedrooms": 2,
-      "bathrooms": 1,
+      "bedrooms": 4,
+      "bathrooms": 3,
       "parking": true,
       "furnished": true,
       "offer": true,
