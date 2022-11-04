@@ -4,9 +4,10 @@
 @import './base/Mixins';
 @import './base/Typogrophy';
 @import './base/Utilities';
+@import './base/Animation';
 
 // components
-@import './components/button';
+@import './components/Button';
 // layouts
 @import './layouts/Navbar';
 @import './layouts/Footer';

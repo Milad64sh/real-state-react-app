@@ -11,8 +11,9 @@ function Navbar() {
   return (
     <div className='navigation'>
       <div className='navigation__content'>
-        <div>
-          <span className='logo'></span>
+        <div className='logo'>
+          <span className='logo__initial'>r</span>eal.
+          <span className='logo__initial'> e</span>state
         </div>
 
         <div>
@@ -30,13 +31,17 @@ function Navbar() {
               Contact Us
             </Link>
             <div className='nav__button__container'>
-              <Button />
+              <Link to={'/sign-in'}>
+                <Button />
+              </Link>
             </div>
           </nav>
         </div>
         <div>
           <div className='navigation__button__container'>
-            <Button />
+            <Link to={'/sign-in'}>
+              <Button />
+            </Link>
           </div>
           <button className='navigation__toggler' onClick={menuToggler}>
             {!openMenu ? <AiOutlineMenu /> : <AiOutlineClose />}

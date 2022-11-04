@@ -24,6 +24,69 @@ body {
   color: #333;
 }
 
+.heading-primary {
+  color: inherit;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 1rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft 1s ease-out;
+}
+@media only screen and (min-width: 48em) {
+  .heading-primary--main {
+    margin-bottom: 4rem;
+  }
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.5rem;
+  margin-bottom: 0;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 button {
   font-family: inherit;
   outline: none;
@@ -33,32 +96,69 @@ button {
   font-size: inherit;
   text-align: inherit;
   padding: 0;
+  background: transparent;
 }
 
-.button {
+.btn {
   font-weight: 500;
+  text-align: center;
   font-size: 2rem;
-  color: #41c058;
-  border: 2px solid #41c058;
+  color: #fff;
+  border: 2px solid #fff;
   padding: 0.8rem 3.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  box-shadow: 0 0 0.5em #41c058;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0.5em #fff;
 }
-.button:active {
+.btn--hero {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52vw;
+  padding: 0.8rem 6.4rem;
+  border-radius: 50px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #333;
+  background-color: rgba(247, 247, 247, 0.8);
+  animation: moveInButton 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+.btn--hero:not(:last-child) {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 48em) {
+  .btn {
+    color: #333;
+    box-shadow: 0 0 0.2em #333;
+    display: inline-block;
+    width: 20rem;
+  }
+}
+.btn:active {
   transform: scale(0.98);
 }
-.button:hover {
-  box-shadow: 0 0 0.75em 0 #41c058;
+.btn:hover {
+  box-shadow: 0 0 0.75em 0 #fff;
+}
+@media only screen and (min-width: 48em) {
+  .btn:hover {
+    box-shadow: 0 0 0.5em 0 #333;
+  }
 }
 
 .navigation {
   height: 7.2rem;
-  background: #f7f7f7;
+  background: transparent;
   color: #333;
   position: fixed;
   z-index: 1000;
   width: 100%;
+  border-bottom: 1px solid #eee;
   box-shadow: 0 1px 5px #eee;
 }
 .navigation__content {
@@ -130,14 +230,19 @@ button {
 }
 .nav__item {
   display: block;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
   padding: 1.6rem;
+  border: transparent;
   font-size: 2rem;
-  color: inherit;
+  color: #000;
   height: 100%;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 .nav__item:hover {
-  color: #41c058;
+  color: #fff;
+  border-bottom: 1px solid #eee;
 }
 @media only screen and (min-width: 48em) {
   .nav {
@@ -165,9 +270,36 @@ button {
 }
 
 .logo {
-  background: url("/src/assets/jpg/favicon.png") cover no-repeat;
-  width: 5rem;
-  height: 5rem;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.logo__initial {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #41c058;
+  font-size: 2.5rem;
+}
+
+.header {
+  height: 100vh;
+  background-image: linear-gradient(rgba(238, 238, 238, 0.6), rgba(153, 153, 153, 0.6)), url("../../assets/jpg/hero/hero-2.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+.header__text-box {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: left;
+}
+@media only screen and (min-width: 48em) {
+  .header__text-box {
+    transform: translate(20%);
+    left: 5%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

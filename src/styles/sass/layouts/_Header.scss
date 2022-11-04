@@ -1,0 +1,22 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba($color-grey-light-2, 0.6),
+      rgba($color-grey-dark-2, 0.6)
+    ),
+    url('../../assets/jpg/hero/hero-2.jpg');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  &__text-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: left;
+    @include breakpoint(md) {
+      transform: translate(20%);
+      left: 5%;
+    }
+  }
+}
