@@ -29,3 +29,9 @@ body {
     animation: moveInRight 1s ease-out;
   }
 }
+
+.heading-tertiary {
+  display: flex;
+  margin-left: 4rem;
+  font-size: $default-font-size;
+}

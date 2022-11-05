@@ -8,9 +8,11 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
 import Buy from './pages/Buy';
 import Rent from './pages/Rent';
+
 function App() {
   return (
     <>
@@ -24,6 +26,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/sign-up' element={<SignUp />} />
         </Routes>
         <Footer />
