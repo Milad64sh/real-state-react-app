@@ -31,17 +31,13 @@ function Navbar() {
               Contact Us
             </Link>
             <div className='nav__button__container'>
-              <Link to={'/sign-in'}>
-                <Button />
-              </Link>
+              <Button />
             </div>
           </nav>
         </div>
         <div>
           <div className='navigation__button__container'>
-            <Link to={'/sign-in'}>
-              <Button />
-            </Link>
+            <Button />
           </div>
           <button className='navigation__toggler' onClick={menuToggler}>
             {!openMenu ? <AiOutlineMenu /> : <AiOutlineClose />}

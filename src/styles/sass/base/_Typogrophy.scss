@@ -32,6 +32,7 @@ body {
 
 .heading-tertiary {
   display: flex;
-  margin-left: 4rem;
   font-size: $default-font-size;
+  letter-spacing: $spacing-ltt;
+  text-transform: uppercase;
 }

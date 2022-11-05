@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+.home {
+  position: relative;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -53,8 +57,9 @@ body {
 
 .heading-tertiary {
   display: flex;
-  margin-left: 4rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
 }
 
 @keyframes moveInLeft {
@@ -184,11 +189,11 @@ button {
   transform: scale(0.98);
 }
 .form__btn:hover {
-  box-shadow: 0 0 0.75em 0 #fff;
+  box-shadow: 0 0 0.75em 0 #eee;
 }
 @media only screen and (min-width: 48em) {
   .form__btn:hover {
-    box-shadow: 0 0 0.5em 0 #333;
+    box-shadow: 0 0 0.5em 0 #eee;
   }
 }
 
@@ -323,6 +328,7 @@ button {
 }
 
 .header {
+  position: absolute;
   height: 100vh;
   background-image: linear-gradient(rgba(238, 238, 238, 0.6), rgba(153, 153, 153, 0.6)), url("../../assets/jpg/hero/hero-2.jpg");
   background-size: cover;
@@ -344,19 +350,37 @@ button {
 }
 
 .signIn {
+  position: fixed;
+  right: 0;
   width: 100%;
   top: 7.2rem;
   height: 100vh;
-  left: -100%;
   text-align: center;
   padding: 1.6rem 0;
-  background: #eee;
+  z-index: 1500;
+  background: rgba(238, 238, 238, 0.9);
   transition: 0.2s ease;
+  transition: 0.3s ease;
 }
 @media only screen and (min-width: 48em) {
   .signIn {
     width: 40rem;
   }
+}
+.signIn__toggler {
+  display: block;
+  float: right;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.signIn__toggler > svg {
+  display: block;
+  font-size: 16px;
+}
+.signIn--open {
+  transition: right 0.2s ease;
+  left: 100%;
 }
 
 .form {
@@ -366,7 +390,11 @@ button {
 .form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
-.form__input {
+.form__group {
+  width: 85%;
+  margin: 0 auto;
+}
+.form__group--input {
   font-size: 1.5rem;
   font-family: inherit;
   color: inherit;
@@ -374,28 +402,36 @@ button {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #999;
-  width: 85%;
   margin: 0 auto;
+  width: 100%;
   display: block;
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .form__input {
+  .form__group--input {
     width: 95%;
   }
 }
-.form__label {
+.form__group--label {
   font-size: 2rem;
   font-weight: 400;
   margin-top: 0.7rem;
-  margin-left: 4rem;
   display: block;
   text-align: left;
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .form__label {
-    margin-left: 1.5rem;
+  .form__group--label {
+    margin-left: 1rem;
+  }
+}
+.form__group--btn {
+  width: 100%;
+}
+@media only screen and (min-width: 48em) {
+  .form__group--btn {
+    width: 85%;
+    margin: 0 auto;
   }
 }
 
