@@ -1,19 +1,14 @@
 .signIn {
   position: fixed;
-  right: 0;
   width: 100%;
-  top: $navbar-height;
   height: 100vh;
-  // right: -100%;
+  visibility: hidden;
+  opacity: 0;
+  // top: $navbar-height;
   text-align: center;
-
-  padding: $spacing-md 0;
   z-index: 1500;
-  background: rgba($color-grey-light-2, 0.9);
+  background: rgba($color-black, 0.8);
   transition: 0.2s ease;
-  @include breakpoint(md) {
-    width: 40rem;
-  }
   &__toggler {
     display: block;
     float: right;
@@ -26,54 +21,75 @@
     }
   }
   transition: 0.3s ease;
-
   &--open {
-    transition: right 0.2s ease;
-    left: 100%;
+    visibility: visible;
+    opacity: 1;
   }
-}
 
-.form {
-  z-index: 1500;
-  margin-top: $navbar-height;
-  &__group:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-  &__group {
-    width: 85%;
-    margin: 0 auto;
-    &--input {
-      font-size: 1.5rem;
-      font-family: inherit;
-      color: inherit;
-      padding: 1.5rem 2rem;
-      border-radius: 3px;
-      background-color: rgba($color-white, 0.5);
-      border: 1px solid $color-grey-dark-2;
+  &__form {
+    position: fixed;
+    padding-top: $navbar-height;
+    width: 100%;
+    right: 0;
+    z-index: 1500;
+    height: 100vh;
+    background-color: $color-grey-light-2;
+    @include breakpoint(md) {
+      width: 40rem;
+    }
+    &__group:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &__group {
+      width: 85%;
       margin: 0 auto;
-      width: 100%;
-      display: block;
-      transition: all 0.3s;
-      @include breakpoint(md) {
-        width: 95%;
+      &--text {
+        display: flex;
+        font-size: 1.5rem;
+        text-align: left;
+        justify-content: space-between;
       }
-    }
-    &--label {
-      font-size: 2rem;
-      font-weight: 400;
-      margin-top: 0.7rem;
-      display: block;
-      text-align: left;
-      transition: all 0.3s;
-      @include breakpoint(md) {
-        margin-left: 1rem;
+      &--link {
+        font-size: 2rem;
+        color: $color-link;
+        float: right;
+        &:last-of-type {
+          margin-bottom: 2rem;
+        }
       }
-    }
-    &--btn {
-      width: 100%;
-      @include breakpoint(md) {
-        width: 85%;
+      &--input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 3px;
+        background-color: rgba($color-white, 0.5);
+        border: 1px solid $color-grey-dark-2;
         margin: 0 auto;
+        width: 100%;
+        display: block;
+        transition: all 0.3s;
+        @include breakpoint(md) {
+          width: 95%;
+        }
+      }
+      &--label {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-top: 0.7rem;
+        display: block;
+        text-align: left;
+        transition: all 0.3s;
+        @include breakpoint(md) {
+          margin-left: 1rem;
+        }
+      }
+      &--btn {
+        width: 100%;
+        @include breakpoint(md) {
+          width: 85%;
+          margin: 0 auto;
+        }
       }
     }
   }

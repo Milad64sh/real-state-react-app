@@ -316,15 +316,40 @@ button {
 }
 
 .logo {
-  color: #333;
   font-size: 2rem;
   font-weight: 400;
+  transition: 0.3s ease;
 }
-.logo__initial {
-  text-transform: uppercase;
+.logo__lg {
+  display: none;
+  color: #333;
+}
+@media only screen and (min-width: 48em) {
+  .logo__lg {
+    display: block;
+  }
+}
+.logo__lg__initial {
   font-weight: bold;
   color: #41c058;
   font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.logo__sm {
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  color: #333;
+  letter-spacing: -0.6rem;
+  font-weight: bold;
+  color: #41c058;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 48em) {
+  .logo__sm {
+    display: none;
+  }
 }
 
 .header {
@@ -351,21 +376,15 @@ button {
 
 .signIn {
   position: fixed;
-  right: 0;
   width: 100%;
-  top: 7.2rem;
   height: 100vh;
+  visibility: hidden;
+  opacity: 0;
   text-align: center;
-  padding: 1.6rem 0;
   z-index: 1500;
-  background: rgba(238, 238, 238, 0.9);
+  background: rgba(0, 0, 0, 0.8);
   transition: 0.2s ease;
   transition: 0.3s ease;
-}
-@media only screen and (min-width: 48em) {
-  .signIn {
-    width: 40rem;
-  }
 }
 .signIn__toggler {
   display: block;
@@ -379,22 +398,45 @@ button {
   font-size: 16px;
 }
 .signIn--open {
-  transition: right 0.2s ease;
-  left: 100%;
+  visibility: visible;
+  opacity: 1;
 }
-
-.form {
+.signIn__form {
+  position: fixed;
+  padding-top: 7.2rem;
+  width: 100%;
+  right: 0;
   z-index: 1500;
-  margin-top: 7.2rem;
+  height: 100vh;
+  background-color: #eee;
 }
-.form__group:not(:last-child) {
+@media only screen and (min-width: 48em) {
+  .signIn__form {
+    width: 40rem;
+  }
+}
+.signIn__form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
-.form__group {
+.signIn__form__group {
   width: 85%;
   margin: 0 auto;
 }
-.form__group--input {
+.signIn__form__group--text {
+  display: flex;
+  font-size: 1.5rem;
+  text-align: left;
+  justify-content: space-between;
+}
+.signIn__form__group--link {
+  font-size: 2rem;
+  color: #33949d;
+  float: right;
+}
+.signIn__form__group--link:last-of-type {
+  margin-bottom: 2rem;
+}
+.signIn__form__group--input {
   font-size: 1.5rem;
   font-family: inherit;
   color: inherit;
@@ -408,11 +450,11 @@ button {
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .form__group--input {
+  .signIn__form__group--input {
     width: 95%;
   }
 }
-.form__group--label {
+.signIn__form__group--label {
   font-size: 2rem;
   font-weight: 400;
   margin-top: 0.7rem;
@@ -421,15 +463,15 @@ button {
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .form__group--label {
+  .signIn__form__group--label {
     margin-left: 1rem;
   }
 }
-.form__group--btn {
+.signIn__form__group--btn {
   width: 100%;
 }
 @media only screen and (min-width: 48em) {
-  .form__group--btn {
+  .signIn__form__group--btn {
     width: 85%;
     margin: 0 auto;
   }

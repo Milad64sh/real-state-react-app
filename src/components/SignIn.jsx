@@ -19,7 +19,6 @@ function SignIn(props) {
       <button className='signIn__toggler' onClick={signInToggler}>
         <AiOutlineClose />
       </button>
-      {props.children}
     </div>
   ) : (
     ''
