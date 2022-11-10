@@ -1,26 +1,70 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/css/index.css';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { AiOutlineClose } from 'react-icons/ai';
-
 import { Link } from 'react-router-dom';
+
+import '../styles/css/index.css';
+// ICONS
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-  const { email, password } = formData;
-  const navigate = useNavigate();
-  const onChange = () => {};
-  const signInToggler = () => setOpenSignIn((p) => !p);
-  const menuToggler = () => setOpenMenu((p) => !p);
+  const [openSignUp, setOpenSignUp] = useState(false);
+
+  // TOGGLING ITEMS
+  const signInToggler = () => setOpenSignIn((prevState) => !prevState);
+  const signUpToggler = () => setOpenSignUp((prevState) => !prevState);
+  const closeSignInAndUp = () => {
+    setOpenSignIn(false);
+    setOpenSignUp(false);
+  };
+  const menuToggler = () => setOpenMenu((prevState) => !prevState);
+
   return (
     <>
       <div className='navigation'>
+        {/* SIGN IN */}
+        <div
+          className={`signingToggler ${
+            openSignIn || openSignUp ? `signingToggler--open` : {}
+          }`}
+        >
+          <div className='signingToggler__logo'>re</div>
+          <button className='signingToggler__signIn' onClick={closeSignInAndUp}>
+            <AiOutlineClose />
+          </button>
+          <div className='signingToggler__group'>
+            {openSignIn && !openSignUp ? (
+              <div className='signingToggler__group--text'>
+                <p>New Member?</p>
+                <button
+                  className='signingToggler__group--link'
+                  onClick={signUpToggler}
+                >
+                  Create Account Here
+                </button>
+              </div>
+            ) : (
+              ''
+            )}
+            {openSignUp && (
+              <div className='signingToggler__group--text'>
+                <p>Already have an account?</p>
+                <button
+                  className='signingToggler__group--link'
+                  onClick={signUpToggler}
+                >
+                  Back to sign in
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+        {openSignIn && !openSignUp && <SignIn />}
+        {openSignUp && <SignUp />}
+        {/* NAVBAR */}
         <div className='navigation__content'>
           <div className='logo'>
             <div className='logo__lg'>
@@ -66,60 +110,6 @@ function Navbar() {
             </button>
           </div>
         </div>
-      </div>
-      <div className={`signIn ${openSignIn ? `signIn--open` : {}}`}>
-        <form className='signIn__form'>
-          <button className='signIn__toggler' onClick={signInToggler}>
-            <AiOutlineClose />
-          </button>
-          <div className='signIn__form__group'>
-            <div className='u-margin-bottom-small'>
-              <h3 className='heading-tertiary'>Sign in</h3>
-            </div>
-          </div>
-          <div className='signIn__form__group'>
-            <div className='signIn__form__group--text'>
-              <p>New Member?</p>
-              <Link to={'/sign-up'} className='signIn__form__group--link'>
-                Create Account Here
-              </Link>
-            </div>
-          </div>
-          <div className='signIn__form__group'>
-            <label htmlFor='email' className='signIn__form__group--label'>
-              Email Address
-            </label>
-            <input
-              type='email'
-              className='signIn__form__group--input'
-              placeholder='Email'
-              id='email'
-              value={email}
-              onChange={onChange}
-            />
-          </div>
-          <div className='signIn__form__group'>
-            <label htmlFor='password' className='signIn__form__group--label'>
-              Password
-            </label>
-            <input
-              type={showPassword ? 'text' : 'password'}
-              className='signIn__form__group--input'
-              placeholder='password'
-              id='password'
-              value={password}
-              onChange={onChange}
-            />
-          </div>
-          <div className='signIn__form__group'>
-            <Link to={'/forgot-password'} className='signIn__form__group--link'>
-              Forgotten your password?
-            </Link>
-          </div>
-          <div className='signIn__form__group--btn'>
-            <button className='form__btn'>Sign in</button>
-          </div>
-        </form>
       </div>
     </>
   );

@@ -123,6 +123,7 @@ button {
   box-shadow: 0 0 0.5em #fff;
 }
 .btn--hero {
+  font-weight: bold;
   display: inline-block;
   display: flex;
   align-items: center;
@@ -130,11 +131,12 @@ button {
   width: 52vw;
   padding: 0.8rem 6.4rem;
   border-radius: 3px;
-  border: none;
+  border: 1px solid #fff;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  color: #333;
-  background-color: rgba(247, 247, 247, 0.8);
+  color: #fff;
+  background: transparent;
+  box-shadow: 0 2px 0.75em #fff;
   animation: moveInButton 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
@@ -144,8 +146,6 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .btn {
-    color: #333;
-    box-shadow: 0 0 0.2em #333;
     display: inline-block;
     width: 20rem;
   }
@@ -154,12 +154,7 @@ button {
   transform: scale(0.98);
 }
 .btn:hover {
-  box-shadow: 0 0 0.75em 0 #fff;
-}
-@media only screen and (min-width: 48em) {
-  .btn:hover {
-    box-shadow: 0 0 0.5em 0 #333;
-  }
+  box-shadow: 0 0 0.85em 0 #fff;
 }
 
 .form__btn {
@@ -172,9 +167,9 @@ button {
   border-radius: 3px;
   background-color: #fff;
   margin: 0 auto;
+  margin-bottom: 2rem;
   display: block;
   width: 85%;
-  transition: all 0.3s;
   border: 2px solid #eee;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -331,7 +326,7 @@ button {
 }
 .logo__lg__initial {
   font-weight: bold;
-  color: #41c058;
+  color: #33949d;
   font-size: 2.5rem;
   text-transform: uppercase;
 }
@@ -342,7 +337,7 @@ button {
   color: #333;
   letter-spacing: -0.6rem;
   font-weight: bold;
-  color: #41c058;
+  color: #33949d;
   font-size: 3rem;
   text-transform: uppercase;
 }
@@ -352,10 +347,72 @@ button {
   }
 }
 
+.signingToggler {
+  position: fixed;
+  width: 100%;
+  right: 0;
+  height: 7.2rem;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+  background-color: #eee;
+  border-bottom: 1px solid #999;
+}
+.signingToggler__group {
+  margin: 1rem auto;
+  width: 85%;
+}
+.signingToggler__group--text {
+  display: flex;
+  font-size: 2rem;
+  text-align: left;
+  justify-content: space-between;
+}
+.signingToggler__group--link {
+  right: 0;
+  font-size: 2rem;
+  color: #33949d;
+  float: right;
+  cursor: pointer;
+}
+@media only screen and (min-width: 48em) {
+  .signingToggler {
+    width: 45rem;
+  }
+}
+.signingToggler--open {
+  visibility: visible;
+  opacity: 1;
+}
+.signingToggler__signIn {
+  position: fixed;
+  font-size: 2rem;
+  top: 2.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.signingToggler__logo {
+  display: flex;
+  text-align: center;
+  padding: 1rem 0;
+  justify-content: center;
+  letter-spacing: -0.6rem;
+  font-weight: bold;
+  color: #33949d;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 48em) {
+  .signingToggler__logo {
+    justify-content: start;
+    margin-left: 1rem;
+  }
+}
+
 .header {
   position: absolute;
   height: 100vh;
-  background-image: linear-gradient(rgba(238, 238, 238, 0.6), rgba(153, 153, 153, 0.6)), url("../../assets/jpg/hero/hero-2.jpg");
+  background-image: linear-gradient(rgba(238, 238, 238, 0.6), rgba(51, 51, 51, 0.6)), url("../../assets/jpg/hero/hero-2.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -374,7 +431,8 @@ button {
   }
 }
 
-.signIn {
+.signIn,
+.signUp {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -384,26 +442,17 @@ button {
   z-index: 1500;
   background: rgba(0, 0, 0, 0.8);
   transition: 0.2s ease;
-  transition: 0.3s ease;
 }
-.signIn__toggler {
-  display: block;
-  float: right;
-  margin-top: 1rem;
-  margin-right: 2rem;
-  cursor: pointer;
-}
-.signIn__toggler > svg {
-  display: block;
-  font-size: 16px;
-}
-.signIn--open {
+.signIn--open,
+.signUp--open {
   visibility: visible;
   opacity: 1;
 }
-.signIn__form {
+.signIn__form,
+.signUp__form {
   position: fixed;
-  padding-top: 7.2rem;
+  top: 7.2rem;
+  padding-top: 6rem;
   width: 100%;
   right: 0;
   z-index: 1500;
@@ -411,32 +460,36 @@ button {
   background-color: #eee;
 }
 @media only screen and (min-width: 48em) {
-  .signIn__form {
-    width: 40rem;
+  .signIn__form,
+.signUp__form {
+    width: 45rem;
   }
 }
-.signIn__form__group:not(:last-child) {
+.signIn__form__group:not(:last-child),
+.signUp__form__group:not(:last-child) {
   margin-bottom: 2rem;
 }
-.signIn__form__group {
+.signIn__form__group,
+.signUp__form__group {
   width: 85%;
   margin: 0 auto;
 }
-.signIn__form__group--text {
+.signIn__form__group--text,
+.signUp__form__group--text {
   display: flex;
   font-size: 1.5rem;
   text-align: left;
   justify-content: space-between;
 }
-.signIn__form__group--link {
+.signIn__form__group--link,
+.signUp__form__group--link {
   font-size: 2rem;
   color: #33949d;
   float: right;
+  cursor: pointer;
 }
-.signIn__form__group--link:last-of-type {
-  margin-bottom: 2rem;
-}
-.signIn__form__group--input {
+.signIn__form__group--input,
+.signUp__form__group--input {
   font-size: 1.5rem;
   font-family: inherit;
   color: inherit;
@@ -450,11 +503,31 @@ button {
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .signIn__form__group--input {
+  .signIn__form__group--input,
+.signUp__form__group--input {
     width: 95%;
   }
 }
-.signIn__form__group--label {
+.signIn__form__group--showPassword,
+.signUp__form__group--showPassword {
+  position: absolute;
+  font-size: 2rem;
+  color: #999;
+  top: 26rem;
+  right: 9%;
+  padding: 1rem;
+}
+.signIn__form__group--showPasswordUp,
+.signUp__form__group--showPasswordUp {
+  position: absolute;
+  font-size: 2rem;
+  color: #999;
+  top: 36.3rem;
+  right: 9%;
+  padding: 1rem;
+}
+.signIn__form__group--label,
+.signUp__form__group--label {
   font-size: 2rem;
   font-weight: 400;
   margin-top: 0.7rem;
@@ -463,15 +536,18 @@ button {
   transition: all 0.3s;
 }
 @media only screen and (min-width: 48em) {
-  .signIn__form__group--label {
+  .signIn__form__group--label,
+.signUp__form__group--label {
     margin-left: 1rem;
   }
 }
-.signIn__form__group--btn {
+.signIn__form__group--btn,
+.signUp__form__group--btn {
   width: 100%;
 }
 @media only screen and (min-width: 48em) {
-  .signIn__form__group--btn {
+  .signIn__form__group--btn,
+.signUp__form__group--btn {
     width: 85%;
     margin: 0 auto;
   }

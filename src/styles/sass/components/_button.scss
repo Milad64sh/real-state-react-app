@@ -22,6 +22,7 @@ button {
   box-shadow: 0 0 0.5em $color-white;
 
   &--hero {
+    font-weight: bold;
     display: inline-block;
     display: flex;
     align-items: center;
@@ -33,18 +34,17 @@ button {
     }
     padding: $spacing-sm $spacing-xl;
     border-radius: 3px;
-    border: none;
+    border: 1px solid $color-white;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    color: $color-grey-dark-3;
-    background-color: rgba($color-grey-light, 0.8);
+    color: $color-white;
+    background: transparent;
+    box-shadow: 0 2px 0.75em $color-white;
     animation: moveInButton 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
   }
 
   @include breakpoint(md) {
-    color: $color-grey-dark-3;
-    box-shadow: 0 0 0.2em $color-grey-dark-3;
     display: inline-block;
     width: 20rem;
   }
@@ -52,10 +52,7 @@ button {
     transform: scale(0.98);
   }
   &:hover {
-    box-shadow: 0 0 0.75em 0 $color-white;
-    @include breakpoint(md) {
-      box-shadow: 0 0 0.5em 0 $color-grey-dark-3;
-    }
+    box-shadow: 0 0 0.85em 0 $color-white;
   }
 }
 
@@ -69,9 +66,10 @@ button {
   border-radius: 3px;
   background-color: $color-white;
   margin: 0 auto;
+  margin-bottom: 2rem;
   display: block;
   width: 85%;
-  transition: all 0.3s;
+  // transition: all 0.3s;
   border: 2px solid $color-grey-light-2;
   cursor: pointer;
   transition: all 0.2s ease;

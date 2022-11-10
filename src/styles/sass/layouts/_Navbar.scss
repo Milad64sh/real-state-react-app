@@ -125,11 +125,12 @@
     }
     &__initial {
       font-weight: bold;
-      color: $color-primary;
+      color: $color-link;
       font-size: 2.5rem;
       text-transform: uppercase;
     }
   }
+
   &__sm {
     display: flex;
     text-align: center;
@@ -137,11 +138,69 @@
     color: $color-grey-dark-3;
     letter-spacing: -0.6rem;
     font-weight: bold;
-    color: $color-primary;
+    color: $color-link;
     font-size: 3rem;
     text-transform: uppercase;
     @include breakpoint(md) {
       display: none;
+    }
+  }
+}
+.signingToggler {
+  position: fixed;
+  width: 100%;
+  right: 0;
+  height: $navbar-height;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+  background-color: $color-grey-light-2;
+  border-bottom: 1px solid $color-grey-dark-2;
+
+  &__group {
+    margin: 1rem auto;
+    width: 85%;
+    &--text {
+      display: flex;
+      font-size: 2rem;
+      text-align: left;
+      justify-content: space-between;
+    }
+    &--link {
+      right: 0;
+      font-size: 2rem;
+      color: $color-link;
+      float: right;
+      cursor: pointer;
+    }
+  }
+  @include breakpoint(md) {
+    width: 45rem;
+  }
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__signIn {
+    position: fixed;
+    font-size: 2rem;
+    top: 2.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  &__logo {
+    display: flex;
+    text-align: center;
+    padding: 1rem 0;
+    justify-content: center;
+    letter-spacing: -0.6rem;
+    font-weight: bold;
+    color: $color-link;
+    font-size: 3rem;
+    text-transform: uppercase;
+    @include breakpoint(md) {
+      justify-content: start;
+      margin-left: 1rem;
     }
   }
 }

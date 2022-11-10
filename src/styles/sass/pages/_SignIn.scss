@@ -1,26 +1,16 @@
-.signIn {
+.signIn,
+.signUp {
   position: fixed;
+
   width: 100%;
   height: 100vh;
   visibility: hidden;
   opacity: 0;
-  // top: $navbar-height;
   text-align: center;
   z-index: 1500;
   background: rgba($color-black, 0.8);
   transition: 0.2s ease;
-  &__toggler {
-    display: block;
-    float: right;
-    margin-top: 1rem;
-    margin-right: 2rem;
-    cursor: pointer;
-    & > svg {
-      display: block;
-      font-size: 16px;
-    }
-  }
-  transition: 0.3s ease;
+
   &--open {
     visibility: visible;
     opacity: 1;
@@ -28,14 +18,15 @@
 
   &__form {
     position: fixed;
-    padding-top: $navbar-height;
+    top: $navbar-height;
+    padding-top: 6rem;
     width: 100%;
     right: 0;
     z-index: 1500;
     height: 100vh;
     background-color: $color-grey-light-2;
     @include breakpoint(md) {
-      width: 40rem;
+      width: 45rem;
     }
     &__group:not(:last-child) {
       margin-bottom: 2rem;
@@ -53,9 +44,7 @@
         font-size: 2rem;
         color: $color-link;
         float: right;
-        &:last-of-type {
-          margin-bottom: 2rem;
-        }
+        cursor: pointer;
       }
       &--input {
         font-size: 1.5rem;
@@ -69,9 +58,26 @@
         width: 100%;
         display: block;
         transition: all 0.3s;
+
         @include breakpoint(md) {
           width: 95%;
         }
+      }
+      &--showPassword {
+        position: absolute;
+        font-size: 2rem;
+        color: $color-grey-dark-2;
+        top: 26rem;
+        right: 9%;
+        padding: 1rem;
+      }
+      &--showPasswordUp {
+        position: absolute;
+        font-size: 2rem;
+        color: $color-grey-dark-2;
+        top: 36.3rem;
+        right: 9%;
+        padding: 1rem;
       }
       &--label {
         font-size: 2rem;
