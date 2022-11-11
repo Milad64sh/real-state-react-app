@@ -7,18 +7,22 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Profile from './Profile';
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   // TOGGLING ITEMS
   const signInToggler = () => setOpenSignIn((prevState) => !prevState);
   const signUpToggler = () => setOpenSignUp((prevState) => !prevState);
-  const closeSignInAndUp = () => {
+  const profileToggler = () => setOpenProfile((prevState) => !prevState);
+  const closeSignInAndUpAndProfile = () => {
     setOpenSignIn(false);
     setOpenSignUp(false);
+    setOpenProfile(false);
   };
   const menuToggler = () => setOpenMenu((prevState) => !prevState);
 
@@ -32,7 +36,10 @@ function Navbar() {
           }`}
         >
           <div className='signingToggler__logo'>re</div>
-          <button className='signingToggler__signIn' onClick={closeSignInAndUp}>
+          <button
+            className='signingToggler__signIn'
+            onClick={closeSignInAndUpAndProfile}
+          >
             <AiOutlineClose />
           </button>
           <div className='signingToggler__group'>
@@ -57,6 +64,17 @@ function Navbar() {
                   onClick={signUpToggler}
                 >
                   Back to sign in
+                </button>
+              </div>
+            )}
+            {openProfile && (
+              <div className='signingToggler__group--text'>
+                <p>view</p>
+                <button
+                  className='signingToggler__group--link'
+                  onClick={profileToggler}
+                >
+                  my RE profile
                 </button>
               </div>
             )}

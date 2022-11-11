@@ -5,12 +5,12 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-// import SignUp from './components/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
 import Buy from './pages/Buy';
 import Rent from './pages/Rent';
 import Navbar from './components/Navbar';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/buy' element={<Buy />} />
           <Route path='/rent' element={<Rent />} />
           <Route path='/about-us' element={<AboutUs />} />

@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 
 import '../styles/css/index.css';
@@ -15,8 +16,8 @@ import { MdVisibilityOff, MdVisibility } from 'react-icons/md';
 function SignUp() {
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  const [showBackToSignIn, setShowBackToSignIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -27,8 +28,11 @@ function SignUp() {
   const signInToggler = () => setOpenSignIn((prevState) => !prevState);
   const signUpToggler = () => setOpenSignUp((prevState) => !prevState);
   const passwordToggler = () => setShowPassword((prevState) => !prevState);
+  const closeSignInAndUp = () => {
+    setOpenSignUp(false);
+  };
   // FORM INPUTS
-  // FORM INPUTS
+
   const { email, password, name } = formData;
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -49,27 +53,23 @@ function SignUp() {
       updateProfile(auth.currentUser, {
         displayName: name,
       });
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, 'users', user.uid), formDataCopy);
       navigate('/');
       setFormData({
         name: '',
         email: '',
         password: '',
       });
-      setShowBackToSignIn(true);
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <div className='signUp signUp--open'>
-      <div
-        className={`signingToggler ${openSignUp ? `signingToggler--open` : {}}`}
-      >
-        <div className='signingToggler__logo'>re</div>
-        <button className='signingToggler__signIn' onClick={signUpToggler}>
-          <AiOutlineClose />
-        </button>
-      </div>
       <form onSubmit={submitSignUp} className='signUp__form'>
         <div className='signUp__form__group'>
           <div className='u-margin-bottom-small'>
@@ -114,12 +114,12 @@ function SignUp() {
             value={password}
             onChange={onChange}
           />
-          <button
-            className='signUp__form__group--showPasswordUp'
-            onClick={passwordToggler}
-          >
-            {!showPassword ? <MdVisibilityOff /> : <MdVisibility />}
-          </button>
+        </div>
+        <div
+          className='signUp__form__group--showPasswordUp'
+          onClick={passwordToggler}
+        >
+          {!showPassword ? <MdVisibilityOff /> : <MdVisibility />}
         </div>
         <div className='signUp__form__group--btn'>
           <button type='submit' className='form__btn'>

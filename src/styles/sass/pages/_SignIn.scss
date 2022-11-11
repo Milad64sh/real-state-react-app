@@ -1,15 +1,15 @@
 .signIn,
 .signUp {
   position: fixed;
-
   width: 100%;
   height: 100vh;
   visibility: hidden;
   opacity: 0;
+
   text-align: center;
   z-index: 1500;
   background: rgba($color-black, 0.8);
-  transition: 0.2s ease;
+  transition: right 0.2s ease;
 
   &--open {
     visibility: visible;
@@ -67,7 +67,7 @@
         position: absolute;
         font-size: 2rem;
         color: $color-grey-dark-2;
-        top: 26rem;
+        top: 25.5rem;
         right: 9%;
         padding: 1rem;
       }

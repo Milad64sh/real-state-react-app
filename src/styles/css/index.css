@@ -441,7 +441,7 @@ button {
   text-align: center;
   z-index: 1500;
   background: rgba(0, 0, 0, 0.8);
-  transition: 0.2s ease;
+  transition: right 0.2s ease;
 }
 .signIn--open,
 .signUp--open {
@@ -513,7 +513,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 26rem;
+  top: 25.5rem;
   right: 9%;
   padding: 1rem;
 }
