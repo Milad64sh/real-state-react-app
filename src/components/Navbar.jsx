@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 
 import '../styles/css/index.css';
@@ -7,13 +8,15 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import Profile from './Profile';
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
+
+  const [user, setUser] = useState({});
+  const auth = getAuth();
 
   // TOGGLING ITEMS
   const signInToggler = () => setOpenSignIn((prevState) => !prevState);
@@ -24,7 +27,13 @@ function Navbar() {
     setOpenSignUp(false);
     setOpenProfile(false);
   };
+  const setProfile = () => {
+    setOpenProfile(true);
+  };
   const menuToggler = () => setOpenMenu((prevState) => !prevState);
+  useEffect(() => {
+    setUser(auth.currentUser);
+  }, []);
 
   return (
     <>
@@ -32,7 +41,9 @@ function Navbar() {
         {/* SIGN IN */}
         <div
           className={`signingToggler ${
-            openSignIn || openSignUp ? `signingToggler--open` : {}
+            openSignIn || openSignUp || openProfile
+              ? `signingToggler--open`
+              : {}
           }`}
         >
           <div className='signingToggler__logo'>re</div>
@@ -43,7 +54,7 @@ function Navbar() {
             <AiOutlineClose />
           </button>
           <div className='signingToggler__group'>
-            {openSignIn && !openSignUp ? (
+            {openSignIn && !openSignUp && !openProfile && (
               <div className='signingToggler__group--text'>
                 <p>New Member?</p>
                 <button
@@ -53,10 +64,21 @@ function Navbar() {
                   Create Account Here
                 </button>
               </div>
-            ) : (
-              ''
             )}
-            {openSignUp && (
+
+            {openProfile && (
+              <div className='signingToggler__group'>
+                <div className='signingToggler__group--text'>
+                  <p>
+                    Hello <strong>{user.displayName}</strong>
+                  </p>
+                  <Link to={'/profile'} className='signingToggler__group--link'>
+                    My <strong>RE</strong> profile
+                  </Link>
+                </div>
+              </div>
+            )}
+            {openSignUp && !openProfile && openSignIn && (
               <div className='signingToggler__group--text'>
                 <p>Already have an account?</p>
                 <button
@@ -67,20 +89,9 @@ function Navbar() {
                 </button>
               </div>
             )}
-            {openProfile && (
-              <div className='signingToggler__group--text'>
-                <p>view</p>
-                <button
-                  className='signingToggler__group--link'
-                  onClick={profileToggler}
-                >
-                  my RE profile
-                </button>
-              </div>
-            )}
           </div>
         </div>
-        {openSignIn && !openSignUp && <SignIn />}
+        {openSignIn && !openSignUp && <SignIn setProfile={setProfile} />}
         {openSignUp && <SignUp />}
         {/* NAVBAR */}
         <div className='navigation__content'>

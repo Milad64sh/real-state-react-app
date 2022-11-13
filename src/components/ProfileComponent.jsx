@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
-function Profile() {
+function ProfileComponent() {
   const [user, setUser] = useState({});
   const auth = getAuth();
   useEffect(() => {
@@ -24,4 +24,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default ProfileComponent;

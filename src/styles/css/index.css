@@ -481,6 +481,13 @@ button {
   text-align: left;
   justify-content: space-between;
 }
+.signIn__form__group--text--profile,
+.signUp__form__group--text--profile {
+  display: flex;
+  font-size: 2rem;
+  text-align: left;
+  justify-content: space-between;
+}
 .signIn__form__group--link,
 .signUp__form__group--link {
   font-size: 2rem;
@@ -513,7 +520,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 25.5rem;
+  top: 25.4rem;
   right: 9%;
   padding: 1rem;
 }
@@ -522,7 +529,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 36.3rem;
+  top: 36.1rem;
   right: 9%;
   padding: 1rem;
 }

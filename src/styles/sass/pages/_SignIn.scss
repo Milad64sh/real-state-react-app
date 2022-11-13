@@ -39,6 +39,12 @@
         font-size: 1.5rem;
         text-align: left;
         justify-content: space-between;
+        &--profile {
+          display: flex;
+          font-size: 2rem;
+          text-align: left;
+          justify-content: space-between;
+        }
       }
       &--link {
         font-size: 2rem;
@@ -67,7 +73,7 @@
         position: absolute;
         font-size: 2rem;
         color: $color-grey-dark-2;
-        top: 25.5rem;
+        top: 25.4rem;
         right: 9%;
         padding: 1rem;
       }
@@ -75,7 +81,7 @@
         position: absolute;
         font-size: 2rem;
         color: $color-grey-dark-2;
-        top: 36.3rem;
+        top: 36.1rem;
         right: 9%;
         padding: 1rem;
       }

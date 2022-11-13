@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -9,14 +10,14 @@ import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
 import Buy from './pages/Buy';
 import Rent from './pages/Rent';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
