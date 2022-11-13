@@ -1,0 +1,27 @@
+.profile {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &__group {
+    width: 85%;
+    margin: 0 auto;
+    &--text {
+      display: flex;
+      font-size: 2rem;
+      text-align: left;
+      justify-content: space-between;
+      &--link {
+        color: $color-link;
+        float: right;
+        cursor: pointer;
+      }
+    }
+    &--btn {
+      width: 100%;
+      @include breakpoint(md) {
+        width: 85%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

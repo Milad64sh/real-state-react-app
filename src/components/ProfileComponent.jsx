@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 function ProfileComponent() {
   const [user, setUser] = useState({});
   const auth = getAuth();
@@ -10,13 +11,14 @@ function ProfileComponent() {
   return (
     <>
       <div className='profile'>
-        <div className='profile__form'>
-          <div className='profile__form__group'>
-            <div className='u-margin-bottom-small'>
-              <h3 className='heading-tertiary'>
-                Hello <span>{user.displayName}</span>
-              </h3>
-            </div>
+        <div className='profile__group'>
+          <div className='profile__group--text'>
+            <p>
+              Hello <strong>{user.displayName}</strong>
+            </p>
+            <Link to={'/profile'} className='profile__group--text--link'>
+              My <strong>RE</strong> profile
+            </Link>
           </div>
         </div>
       </div>

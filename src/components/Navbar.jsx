@@ -8,6 +8,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import ProfileComponent from './ProfileComponent';
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -66,18 +67,6 @@ function Navbar() {
               </div>
             )}
 
-            {openProfile && (
-              <div className='signingToggler__group'>
-                <div className='signingToggler__group--text'>
-                  <p>
-                    Hello <strong>{user.displayName}</strong>
-                  </p>
-                  <Link to={'/profile'} className='signingToggler__group--link'>
-                    My <strong>RE</strong> profile
-                  </Link>
-                </div>
-              </div>
-            )}
             {openSignUp && !openProfile && openSignIn && (
               <div className='signingToggler__group--text'>
                 <p>Already have an account?</p>

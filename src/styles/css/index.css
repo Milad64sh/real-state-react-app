@@ -192,6 +192,34 @@ button {
   }
 }
 
+.profile__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.profile__group {
+  width: 85%;
+  margin: 0 auto;
+}
+.profile__group--text {
+  display: flex;
+  font-size: 2rem;
+  text-align: left;
+  justify-content: space-between;
+}
+.profile__group--text--link {
+  color: #33949d;
+  float: right;
+  cursor: pointer;
+}
+.profile__group--btn {
+  width: 100%;
+}
+@media only screen and (min-width: 48em) {
+  .profile__group--btn {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
 .navigation {
   height: 7.2rem;
   background: transparent;
@@ -464,6 +492,29 @@ button {
 .signUp__form {
     width: 45rem;
   }
+}
+.signIn__form__erContainer,
+.signUp__form__erContainer {
+  width: 85%;
+  margin: 0 auto;
+  color: #db0b0b;
+  display: flex;
+  text-align: left;
+  border-left: 5px solid #db0b0b;
+  visibility: hidden;
+  opacity: 0;
+}
+.signIn__form__erContainer--erText,
+.signUp__form__erContainer--erText {
+  margin-left: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.signIn__form__erContainer--open,
+.signUp__form__erContainer--open {
+  visibility: visible;
+  opacity: 1;
 }
 .signIn__form__group:not(:last-child),
 .signUp__form__group:not(:last-child) {
