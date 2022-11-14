@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 // SASS
@@ -15,6 +14,7 @@ function SignIn(props) {
   const [closeSignIn, setCloseSignIn] = useState(true);
   const [openProfile, setOpenProfile] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -39,7 +39,6 @@ function SignIn(props) {
   };
   // FORM INPUTS
   const { email, password } = formData;
-  const navigate = useNavigate();
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -56,7 +55,6 @@ function SignIn(props) {
         password
       );
       if (userCredential.user) {
-        // navigate('/profile');
         colapseSignIn();
         setOpenProfile(true);
       }

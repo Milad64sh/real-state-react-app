@@ -10,29 +10,28 @@ import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
 import Buy from './pages/Buy';
 import Rent from './pages/Rent';
-// import Navbar from './components/Navbar';
-import Profile from './pages/Profile';
+import ProfilePage from './pages/ProfilePage';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
     <>
-      <Router>
-        {/* <Navbar /> */}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/buy' element={<Buy />} />
-          <Route path='/rent' element={<Rent />} />
-          <Route path='/about-us' element={<AboutUs />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/contact-us' element={<ContactUs />} />
-
-          <Route path='/forgot-password' element={<ForgotPassword />} />
-          {/* <Route path='/sign-up' element={<SignUp />} /> */}
-        </Routes>
-        <Footer />
-      </Router>
-      <ToastContainer />
+      <ThemeProvider>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/buy' element={<Buy />} />
+            <Route path='/rent' element={<Rent />} />
+            <Route path='/about-us' element={<AboutUs />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/contact-us' element={<ContactUs />} />
+            <Route path='/forgot-password' element={<ForgotPassword />} />
+          </Routes>
+          <Footer />
+        </Router>
+        <ToastContainer />
+      </ThemeProvider>
     </>
   );
 }

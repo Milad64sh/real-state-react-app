@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+import ThemeContext from '../context/ThemeContext';
 import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 function ProfileComponent() {
+  const { changeSignInBtn } = useContext(ThemeContext);
   const [user, setUser] = useState({});
   const auth = getAuth();
+
   useEffect(() => {
-    console.log(auth.currentUser);
     setUser(auth.currentUser);
   }, []);
   return (
@@ -16,7 +19,11 @@ function ProfileComponent() {
             <p>
               Hello <strong>{user.displayName}</strong>
             </p>
-            <Link to={'/profile'} className='profile__group--text--link'>
+            <Link
+              to={'/profile'}
+              className='profile__group--text--link'
+              onClick={changeSignInBtn}
+            >
               My <strong>RE</strong> profile
             </Link>
           </div>

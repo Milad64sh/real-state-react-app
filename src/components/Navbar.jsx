@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import ThemeContext from '../context/ThemeContext';
 import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 
 import '../styles/css/index.css';
 // ICONS
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { RiLogoutBoxRLine } from 'react-icons/ri';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import ProfileComponent from './ProfileComponent';
 
 function Navbar() {
+  const { changeBtn } = useContext(ThemeContext);
   const [openMenu, setOpenMenu] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -31,6 +33,7 @@ function Navbar() {
   const setProfile = () => {
     setOpenProfile(true);
   };
+
   const menuToggler = () => setOpenMenu((prevState) => !prevState);
   useEffect(() => {
     setUser(auth.currentUser);
@@ -111,17 +114,29 @@ function Navbar() {
                 Contact Us
               </Link>
               <div className='nav__button__container'>
-                <button className='btn' onClick={signInToggler}>
-                  Sign In
-                </button>
+                {changeBtn ? (
+                  <button className='btn' onClick={signInToggler}>
+                    <RiLogoutBoxRLine /> Logout
+                  </button>
+                ) : (
+                  <button className='btn' onClick={signInToggler}>
+                    Sign In
+                  </button>
+                )}
               </div>
             </nav>
           </div>
           <div>
             <div className='navigation__button__container'>
-              <button className='btn' onClick={signInToggler}>
-                Sign In
-              </button>
+              {changeBtn ? (
+                <button className='btn' onClick={signInToggler}>
+                  <RiLogoutBoxRLine /> Logout
+                </button>
+              ) : (
+                <button className='btn' onClick={signInToggler}>
+                  Sign In
+                </button>
+              )}
             </div>
             <button className='navigation__toggler' onClick={menuToggler}>
               {!openMenu ? <AiOutlineMenu /> : <AiOutlineClose />}
