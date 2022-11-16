@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import ThemeContext from '../context/ThemeContext';
 import { getAuth } from 'firebase/auth';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+
 function ProfileComponent() {
   const { changeSignInBtn } = useContext(ThemeContext);
   const [user, setUser] = useState({});

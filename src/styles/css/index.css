@@ -55,9 +55,16 @@ body {
   animation: moveInRight 1s ease-out;
 }
 
+.heading-secondary {
+  display: flex;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
 .heading-tertiary {
   display: flex;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
 }
@@ -613,8 +620,56 @@ button {
 
 .profilePage {
   width: 100%;
-  height: 200px;
-  background-color: #999;
+  height: 100vh;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profilePage__form {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px rgba(153, 153, 153, 0.7);
+  width: 90%;
+  padding: 2rem 3rem;
+}
+.profilePage__form__heading {
+  display: block;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.profilePage__form__group {
+  position: relative;
+  margin: 0 auto;
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid #e0dfdf;
+  padding: 1rem 3rem;
+  background-color: #eee;
+}
+.profilePage__form__group--label {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.profilePage__form__group--label--edit {
+  color: #33949d;
+  cursor: pointer;
+}
+.profilePage__form__group--label--edit:hover {
+  font-weight: bold;
+}
+.profilePage__form__group--input {
+  display: block;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 1.5rem;
+  border: 1px solid #e0dfdf;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */

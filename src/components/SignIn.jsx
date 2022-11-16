@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 // SASS
 import '../styles/css/index.css';
@@ -9,7 +9,6 @@ import ProfileComponent from './ProfileComponent';
 // COMPONENTS
 
 function SignIn(props) {
-  const [openSignIn, setOpenSignIn] = useState(false);
   const [openError, setOpenError] = useState(false);
   const [closeSignIn, setCloseSignIn] = useState(true);
   const [openProfile, setOpenProfile] = useState(false);
@@ -30,7 +29,6 @@ function SignIn(props) {
   const setProfile = (s) => {
     props.setProfile(s);
   };
-  const signInToggler = () => setOpenSignIn((prevState) => !prevState);
   const profileToggler = () => setOpenProfile((prevState) => !prevState);
   const passwordToggler = () => setShowPassword((prevState) => !prevState);
   const colapseSignIn = () => {
@@ -56,7 +54,7 @@ function SignIn(props) {
       );
       if (userCredential.user) {
         colapseSignIn();
-        setOpenProfile(true);
+        profileToggler();
       }
     } catch (error) {
       setOpenError(true);

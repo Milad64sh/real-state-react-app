@@ -30,6 +30,13 @@ body {
   }
 }
 
+.heading-secondary {
+  display: flex;
+  font-size: 1.5rem;
+  // letter-spacing: $spacing-ltt;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
 .heading-tertiary {
   display: flex;
   font-size: $default-font-size;

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import ThemeContext from '../context/ThemeContext';
 import { getAuth } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../styles/css/index.css';
 // ICONS
@@ -12,7 +12,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 
 function Navbar() {
-  const { changeBtn } = useContext(ThemeContext);
+  const { changeBtn, changeSignInBtn } = useContext(ThemeContext);
   const [openMenu, setOpenMenu] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -20,6 +20,7 @@ function Navbar() {
 
   const [user, setUser] = useState({});
   const auth = getAuth();
+  const navigate = useNavigate();
 
   // TOGGLING ITEMS
   const signInToggler = () => setOpenSignIn((prevState) => !prevState);
@@ -38,6 +39,12 @@ function Navbar() {
   useEffect(() => {
     setUser(auth.currentUser);
   }, []);
+
+  const onLogout = () => {
+    auth.signOut();
+    navigate('/');
+    changeSignInBtn();
+  };
 
   return (
     <>
@@ -115,7 +122,7 @@ function Navbar() {
               </Link>
               <div className='nav__button__container'>
                 {changeBtn ? (
-                  <button className='btn' onClick={signInToggler}>
+                  <button className='btn' onClick={onLogout}>
                     <RiLogoutBoxRLine /> Logout
                   </button>
                 ) : (
@@ -129,7 +136,7 @@ function Navbar() {
           <div>
             <div className='navigation__button__container'>
               {changeBtn ? (
-                <button className='btn' onClick={signInToggler}>
+                <button className='btn' onClick={onLogout}>
                   <RiLogoutBoxRLine /> Logout
                 </button>
               ) : (

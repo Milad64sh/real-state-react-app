@@ -6,8 +6,9 @@ export const ThemeProvider = ({ children }) => {
   const [changeBtn, setChangeBtn] = useState(false);
 
   const changeSignInBtn = () => {
-    setChangeBtn(true);
+    setChangeBtn((prevState) => !prevState);
   };
+
   return (
     <ThemeContext.Provider
       value={{

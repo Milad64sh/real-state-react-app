@@ -7,6 +7,7 @@ $color-grey-dark-1: #777;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333; //text
 $color-grey-light: #f7f7f7; //bg
+$color-grey-light-3: #e0dfdf; //br
 $color-grey-light-2: #eee;
 $color-white: #fff;
 $color-black: #000;
@@ -33,4 +34,7 @@ $lg: 64em;
 $xl: 75em;
 
 // FONTS
-$default-font-size: 2rem;
+$default-font-size: 1.5rem;
+
+// GRID
+$grid-width: 114rem;

@@ -1,5 +1,55 @@
 .profilePage {
   width: 100%;
-  height: 200px;
-  background-color: $color-grey-dark-2;
+  height: 100vh;
+  background-color: $color-grey-light-2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__form {
+    background-color: $color-grey-light;
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px rgba($color-grey-dark-2, 0.7);
+    width: 90%;
+    padding: 2rem 3rem;
+    &__heading {
+      display: block;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    &__group {
+      position: relative;
+      margin: 0 auto;
+      width: 95%;
+      border-radius: 5px;
+      border: 1px solid $color-grey-light-3;
+      padding: 1rem 3rem;
+
+      background-color: $color-grey-light-2;
+      &--label {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        font-size: $default-font-size;
+        &--edit {
+          color: $color-link;
+          cursor: pointer;
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+      &--input {
+        display: block;
+        background-color: $color-grey-light;
+        color: $color-grey-dark-3;
+        font-size: $default-font-size;
+        border: 1px solid $color-grey-light-3;
+        border-radius: 5px;
+        font-size: $default-font-size;
+        padding: 1rem 2rem;
+      }
+    }
+  }
 }
