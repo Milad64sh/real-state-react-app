@@ -578,7 +578,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 30.4rem;
+  top: 27.2rem;
   right: 9%;
   padding: 1rem;
 }
@@ -642,6 +642,7 @@ button {
 .profilePage__form__group {
   position: relative;
   margin: 0 auto;
+  margin-bottom: 1rem;
   width: 95%;
   border-radius: 5px;
   border: 1px solid #e0dfdf;
@@ -663,13 +664,39 @@ button {
 }
 .profilePage__form__group--input {
   display: block;
-  background-color: #f7f7f7;
+  background-color: transparent;
   color: #333;
   font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+.profilePage__editForm--input {
+  display: block;
+  background-color: #f7f7f7;
   border: 1px solid #e0dfdf;
   border-radius: 5px;
   font-size: 1.5rem;
   padding: 1rem 2rem;
+  width: 100%;
+}
+.profilePage__editForm--btn {
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #33949d;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  border: 2px solid #33949d;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.profilePage__editForm--btn:hover {
+  background-color: transparent;
+  color: #33949d;
 }
 
 /*# sourceMappingURL=index.css.map */

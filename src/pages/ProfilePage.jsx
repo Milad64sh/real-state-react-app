@@ -1,15 +1,20 @@
 import { useState } from 'react';
-import { getAuth } from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { updateDoc } from 'firebase/firestore';
+import { db } from '../firebase.config';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiEdit } from 'react-icons/fi';
+
 import Navbar from '../components/Navbar';
+import ProfileDetail from '../components/ProfileDetail';
 
 function ProfilePage() {
+  const [changeDetails, setChangeDetails] = useState(false);
   const auth = getAuth();
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
   });
+  const { name, email } = formData;
 
   return (
     <>
@@ -21,22 +26,7 @@ function ProfilePage() {
               <h2>Personal details</h2>
             </div>
           </div>
-          <div className='profilePage__form__group'>
-            <div className='profilePage__form__group--label'>
-              <div className='profilePage__form__group--label--title'>
-                <h3>Name</h3>
-              </div>
-              <div className='profilePage__form__group--label--edit'>
-                <p>
-                  <FiEdit />
-                  &nbsp; Edit
-                </p>
-              </div>
-            </div>
-            <div className='profilePage__form__group--input'>
-              <p>name</p>
-            </div>
-          </div>
+          <ProfileDetail />
         </div>
       </div>
     </>

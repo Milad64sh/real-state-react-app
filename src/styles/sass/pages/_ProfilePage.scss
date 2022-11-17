@@ -21,6 +21,7 @@
     &__group {
       position: relative;
       margin: 0 auto;
+      margin-bottom: 1rem;
       width: 95%;
       border-radius: 5px;
       border: 1px solid $color-grey-light-3;
@@ -42,13 +43,43 @@
       }
       &--input {
         display: block;
-        background-color: $color-grey-light;
+        background-color: transparent;
         color: $color-grey-dark-3;
         font-size: $default-font-size;
-        border: 1px solid $color-grey-light-3;
+        border: none;
         border-radius: 5px;
         font-size: $default-font-size;
         padding: 1rem 2rem;
+        &--active {
+        }
+      }
+    }
+  }
+  &__editForm {
+    &--input {
+      display: block;
+      background-color: $color-grey-light;
+      border: 1px solid $color-grey-light-3;
+      border-radius: 5px;
+      font-size: $default-font-size;
+      padding: 1rem 2rem;
+      width: 100%;
+    }
+    &--btn {
+      margin-top: 0.5rem;
+      padding: 1rem 1.5rem;
+      background-color: $color-link;
+      font-size: $default-font-size;
+      letter-spacing: $spacing-ltt;
+      color: $color-white;
+      text-transform: uppercase;
+      border: 2px solid $color-link;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: transparent;
+        color: $color-link;
       }
     }
   }
