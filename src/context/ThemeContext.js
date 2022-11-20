@@ -1,5 +1,7 @@
 import { createContext, useState } from 'react';
-
+import { getAuth, updateProfile } from 'firebase/auth';
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../firebase.config';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
@@ -9,7 +11,6 @@ export const ThemeProvider = ({ children }) => {
     item: {},
     edit: false,
   });
-
   const changeSignInBtn = () => {
     setChangeBtn((prevState) => !prevState);
   };

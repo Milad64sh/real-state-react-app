@@ -578,7 +578,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 27.2rem;
+  top: 29.5rem;
   right: 9%;
   padding: 1rem;
 }
@@ -587,7 +587,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 36.1rem;
+  top: 35.3rem;
   right: 9%;
   padding: 1rem;
 }
@@ -635,9 +635,19 @@ button {
   padding: 2rem 3rem;
 }
 .profilePage__form__heading {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
   padding-left: 2rem;
   margin-bottom: 1.5rem;
+}
+.profilePage__form__heading--edit {
+  color: #33949d;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.profilePage__form__heading--edit:hover {
+  font-weight: bold;
 }
 .profilePage__form__group {
   position: relative;
@@ -650,17 +660,7 @@ button {
   background-color: #eee;
 }
 .profilePage__form__group--label {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
   font-size: 1.5rem;
-}
-.profilePage__form__group--label--edit {
-  color: #33949d;
-  cursor: pointer;
-}
-.profilePage__form__group--label--edit:hover {
-  font-weight: bold;
 }
 .profilePage__form__group--input {
   display: block;
@@ -672,7 +672,7 @@ button {
   font-size: 1.5rem;
   padding: 1rem 2rem;
 }
-.profilePage__editForm--input {
+.profilePage__form__editForm--input {
   display: block;
   background-color: #f7f7f7;
   border: 1px solid #e0dfdf;
@@ -681,8 +681,11 @@ button {
   padding: 1rem 2rem;
   width: 100%;
 }
-.profilePage__editForm--btn {
-  margin-top: 0.5rem;
+.profilePage__form__editForm--btn {
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
   padding: 1rem 1.5rem;
   background-color: #33949d;
   font-size: 1.5rem;
@@ -694,9 +697,95 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.profilePage__editForm--btn:hover {
+.profilePage__form__editForm--btn:hover {
   background-color: transparent;
   color: #33949d;
+}
+@media only screen and (min-width: 48em) {
+  .profilePage__form {
+    width: 60%;
+  }
+}
+
+.forgotPassContainer {
+  background-color: #eee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.forgotPassContainer__form {
+  width: 50%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border: 1px solid #e0dfdf;
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px rgba(153, 153, 153, 0.7);
+}
+.forgotPassContainer__form__header {
+  text-align: center;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+.forgotPassContainer__form__header--logo {
+  font-size: 2rem;
+}
+.forgotPassContainer__form__formGroup {
+  margin-top: 1rem;
+}
+.forgotPassContainer__form__formGroup--text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.forgotPassContainer__form__formGroup--success {
+  display: none;
+  border-left: 5px solid #66d381;
+  color: #66d381;
+  font-weight: bold;
+}
+.forgotPassContainer__form__formGroup--error {
+  display: none;
+  border-left: 5px solid #db0b0b;
+  color: #db0b0b;
+  font-weight: bold;
+}
+.forgotPassContainer__form__formGroup--link {
+  text-align: end;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #33949d;
+}
+.forgotPassContainer__form__formGroup--input {
+  width: 100%;
+  font-size: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+.forgotPassContainer__form__formGroup--btn {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  background-color: #33949d;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: capitalize;
+  border: 2px solid #33949d;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.forgotPassContainer__form__formGroup--btn:hover {
+  background-color: transparent;
+  color: #33949d;
+}
+
+.show {
+  display: flex;
 }
 
 /*# sourceMappingURL=index.css.map */

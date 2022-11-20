@@ -12,7 +12,7 @@ import Buy from './pages/Buy';
 import Rent from './pages/Rent';
 import ProfilePage from './pages/ProfilePage';
 import { ThemeProvider } from './context/ThemeContext';
-
+import PrivateRoute from './components/PrivateRoute';
 function App() {
   return (
     <>
@@ -20,7 +20,9 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/profile' element={<PrivateRoute />}>
+              <Route path='/profile' element={<ProfilePage />} />
+            </Route>
             <Route path='/buy' element={<Buy />} />
             <Route path='/rent' element={<Rent />} />
             <Route path='/about-us' element={<AboutUs />} />
