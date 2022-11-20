@@ -64,7 +64,7 @@ body {
 
 .heading-tertiary {
   display: flex;
-  font-size: 1.5rem;
+  font-size: 2rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
 }
@@ -578,7 +578,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 29.5rem;
+  top: 30.5rem;
   right: 9%;
   padding: 1rem;
 }
@@ -587,7 +587,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: #999;
-  top: 35.3rem;
+  top: 35.8rem;
   right: 9%;
   padding: 1rem;
 }
@@ -716,19 +716,24 @@ button {
   justify-content: center;
 }
 .forgotPassContainer__form {
-  width: 50%;
+  width: 70%;
   background-color: #fff;
   padding: 1rem 2rem;
   border: 1px solid #e0dfdf;
   border-radius: 5px;
   box-shadow: 0px 2px 15px rgba(153, 153, 153, 0.7);
 }
+@media only screen and (min-width: 48em) {
+  .forgotPassContainer__form {
+    width: 30%;
+  }
+}
 .forgotPassContainer__form__header {
   text-align: center;
   padding: 0;
   border-bottom: 1px solid #eee;
 }
-.forgotPassContainer__form__header--logo {
+.forgotPassContainer__form__header--fplogo {
   font-size: 2rem;
 }
 .forgotPassContainer__form__formGroup {

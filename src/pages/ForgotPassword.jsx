@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
-import { BsArrowLeftShort } from 'react-icons/bs';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -14,19 +13,23 @@ function ForgotPassword() {
     try {
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email);
+      setSuccess(true);
       setTimeout(() => {
-        setSuccess(true);
+        setSuccess(false);
       }, 3000);
     } catch (error) {
       setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
     }
   };
   return (
     <div className='forgotPassContainer'>
       <div className='forgotPassContainer__form'>
         <div className='forgotPassContainer__form__header'>
-          <div className='forgotPassContainer__form__header--logo'>
-            <div className='logo__lg'>
+          <div className='forgotPassContainer__form__header--fplogo'>
+            <div className='fplogo__lg'>
               <span className='logo__lg__initial'>r</span>eal.
               <span className='logo__lg__initial'> e</span>state
             </div>

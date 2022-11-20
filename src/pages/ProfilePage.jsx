@@ -56,7 +56,7 @@ function ProfilePage({ item }) {
                 className='profilePage__form__heading--edit'
                 onClick={() => editProfile(item)}
               >
-                <p>x &nbsp; cancel</p>
+                <p>X cancel</p>
               </div>
             ) : (
               <div
