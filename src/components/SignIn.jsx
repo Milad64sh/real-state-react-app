@@ -7,6 +7,7 @@ import '../styles/css/index.css';
 import { MdVisibilityOff, MdVisibility } from 'react-icons/md';
 import ProfileComponent from './ProfileComponent';
 // COMPONENTS
+import OAuth from './OAuth';
 
 function SignIn(props) {
   const [openError, setOpenError] = useState(false);
@@ -68,8 +69,8 @@ function SignIn(props) {
             <ProfileComponent />
           </div>
         ) : (
-          <>
-            <form onSubmit={submitSignIn} className='signIn__form'>
+          <div className='signIn__form'>
+            <form onSubmit={submitSignIn} className='signIn__form__form'>
               <div
                 className={`signIn__form__erContainer ${
                   openError ? `signIn__form__erContainer--open` : {}
@@ -129,16 +130,20 @@ function SignIn(props) {
                   Sign in
                 </button>
               </div>
-              <div className='signIn__form__group'>
-                <Link
-                  to={'/forgot-password'}
-                  className='signIn__form__group--link'
-                >
-                  Forgotten your password?
-                </Link>
-              </div>
             </form>
-          </>
+
+            <div className='signIn__form__OAuth'>
+              <OAuth />
+            </div>
+            <div className='signIn__form__group'>
+              <Link
+                to={'/forgot-password'}
+                className='signIn__form__group--link'
+              >
+                Forgotten your password?
+              </Link>
+            </div>
+          </div>
         )}
       </div>
     </>

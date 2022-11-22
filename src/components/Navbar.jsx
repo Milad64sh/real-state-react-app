@@ -17,6 +17,7 @@ function Navbar() {
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const [user, setUser] = useState({});
   const auth = getAuth();
@@ -45,6 +46,16 @@ function Navbar() {
     navigate('/');
     changeSignInBtn();
   };
+
+  // NAV SCROLL CHANGE
+  const navScroll = () => {
+    if (window.scrollY >= 300) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  window.addEventListener('scroll', navScroll);
 
   return (
     <>
@@ -93,7 +104,11 @@ function Navbar() {
         {openSignIn && !openSignUp && <SignIn setProfile={setProfile} />}
         {openSignUp && <SignUp />}
         {/* NAVBAR */}
-        <div className='navigation__content'>
+        <div
+          className={
+            scrolled ? 'navigation__content scrolled' : 'navigation__content'
+          }
+        >
           <div className='logo'>
             <div className='logo__lg'>
               <span className='logo__lg__initial'>r</span>eal.

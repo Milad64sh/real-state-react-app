@@ -15,7 +15,7 @@
     @include breakpoint(md) {
       padding: 0 $spacing-lg;
     }
-    transition: 0.3s ease padding;
+    transition: all 0.3s ease;
 
     height: 100%;
     display: flex;
@@ -203,4 +203,9 @@
       margin-left: 1rem;
     }
   }
+}
+
+.scrolled {
+  background-color: $color-grey-light-3;
+  height: 10rem;
 }

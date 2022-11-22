@@ -69,7 +69,6 @@ button {
   margin-bottom: 2rem;
   display: block;
   width: 85%;
-  // transition: all 0.3s;
   border: 2px solid $color-grey-light-2;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -87,4 +86,10 @@ button {
       box-shadow: 0 0 0.5em 0 $color-grey-light-2;
     }
   }
+}
+
+.bouncingBtn {
+  text-transform: uppercase;
+  font-size: $default-font-size;
+  animation: bounce 2s infinite;
 }

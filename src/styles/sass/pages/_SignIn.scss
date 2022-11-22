@@ -52,6 +52,28 @@
     &__group:not(:last-child) {
       margin-bottom: 2rem;
     }
+    &__OAuth {
+      width: 85%;
+      margin: 1rem auto;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      color: $color-grey-dark-1;
+      font-family: inherit;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 3px;
+      background-color: $color-white;
+      border: 2px solid $color-grey-light-2;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 0.5em $color-white;
+      &--btn {
+        cursor: pointer;
+      }
+      @include breakpoint(md) {
+        width: 80%;
+      }
+    }
     &__group {
       width: 85%;
       margin: 0 auto;
