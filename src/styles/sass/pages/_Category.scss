@@ -1,0 +1,14 @@
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__heading {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-top: 5rem;
+  }
+  &__listings {
+    width: 70%;
+  }
+}
