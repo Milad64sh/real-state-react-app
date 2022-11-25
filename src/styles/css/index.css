@@ -541,53 +541,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-.row__unit--explore {
-  display: flex;
-  height: 25rem;
-  width: 100%;
-  background: url("../../assets/jpg/hero/hero-3.jpg") no-repeat center/cover;
-  background-attachment: fixed;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.row__unit--explore--link {
-  cursor: pointer;
-  width: 100%;
-  height: 25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 3rem;
-  font-weight: 300;
-  letter-spacing: 0.5rem;
-  background-size: 220%;
-  background-image: linear-gradient(120deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-.row__unit--explore--link:hover {
-  background-image: linear-gradient(120deg, #33949d 0%, #33949d 50%, #eee 50%);
-  background-position: 20%;
-}
-.row__unit--explore--link--text {
-  width: 100%;
-  height: 25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transform: translate(0);
-}
-.row__unit--explore--link--text:hover {
-  transform: translateX(-5%);
-}
 .row__unit--rent {
   display: flex;
   height: 25rem;
@@ -610,13 +563,13 @@ button {
   font-weight: 300;
   letter-spacing: 0.5rem;
   background-size: 220%;
-  background-image: linear-gradient(120deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
 .row__unit--rent--link:hover {
-  background-image: linear-gradient(120deg, #33949d 0%, #33949d 50%, #eee 50%);
-  background-position: 20%;
+  background-image: linear-gradient(110deg, #33949d 0%, #33949d 50%, #eee 50%);
+  background-position: 15%;
 }
 .row__unit--rent--link--text {
   width: 100%;
@@ -657,13 +610,13 @@ button {
   font-weight: 300;
   letter-spacing: 0.5rem;
   background-size: 220%;
-  background-image: linear-gradient(120deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
 .row__unit--buy--link:hover {
-  background-image: linear-gradient(120deg, #33949d 0%, #33949d 50%, #eee 50%);
-  background-position: 20%;
+  background-image: linear-gradient(110deg, #33949d 0%, #33949d 50%, #eee 50%);
+  background-position: 15%;
 }
 .row__unit--buy--link--text {
   width: 100%;
@@ -682,10 +635,58 @@ button {
 .row__unit--buy--link--text:hover {
   transform: translateX(-5%);
 }
+.row__unit--overseas {
+  display: flex;
+  height: 25rem;
+  width: 100%;
+  background: url("../../assets/jpg/hero/hero-3.jpg") no-repeat center/cover;
+  background-attachment: fixed;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.row__unit--overseas--link {
+  cursor: pointer;
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.5rem;
+  background-size: 220%;
+  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.row__unit--overseas--link:hover {
+  background-image: linear-gradient(110deg, #33949d 0%, #33949d 50%, #eee 50%);
+  background-position: 15%;
+}
+.row__unit--overseas--link--text {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-transform: translate(0);
+}
+.row__unit--overseas--link--text:hover {
+  transform: translateX(-5%);
+}
 
 .category {
   display: flex;
-  justify-content: center;
+  background-color: #f7f7f7;
+  height: 100vh;
   align-items: center;
   flex-direction: column;
 }
@@ -694,8 +695,90 @@ button {
   font-weight: 200;
   margin-top: 5rem;
 }
-.category__listings {
-  width: 70%;
+.category__listing {
+  display: flex;
+  border-bottom: 1px solid #999;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+  justify-content: center;
+  width: 70vw;
+}
+@media only screen and (min-width: 64em) {
+  .category__listing {
+    display: flex;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 70vw;
+  }
+}
+.category__listing--img {
+  height: 25rem;
+  margin-right: 2rem;
+  padding-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.category__listing--img:hover {
+  transform: scale(1.02);
+}
+@media only screen and (min-width: 64em) {
+  .category__listing--img {
+    border-right: 1px solid #999;
+  }
+}
+.category__listing--details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 1rem;
+  width: 70vw;
+}
+@media only screen and (min-width: 64em) {
+  .category__listing--details {
+    display: flex;
+    border-bottom: none;
+  }
+}
+.category__listing--details--h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+}
+.category__listing--details--desc {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.category__listing--details--price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #33949d;
+}
+.category__listing--details--info {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.category__listing--details--info--bed {
+  display: flex;
+  margin-right: 2rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.category__listing--details--info--bed--text {
+  padding-left: 0.5rem;
+}
+.category__listing--details--info--bath {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.category__listing--details--info--bath--text {
+  padding-left: 0.5rem;
 }
 
 .signIn,

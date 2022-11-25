@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ForgotPassword from './pages/ForgotPassword';
@@ -26,7 +25,6 @@ function App() {
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
           </Routes>
-          <Footer />
         </Router>
         <ToastContainer />
       </ThemeProvider>

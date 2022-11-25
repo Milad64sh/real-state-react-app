@@ -61,11 +61,11 @@ function Explore() {
             </div>
           </div>
           <div className='row__unit'>
-            <div className='row__unit--explore' id='explore'>
-              <div className='row__unit--explore--link'>
+            <div className='row__unit--overseas' id='overseas'>
+              <div className='row__unit--overseas--link'>
                 <Link
-                  className='row__unit--explore--link--text'
-                  to={'/explore'}
+                  className='row__unit--overseas--link--text'
+                  to={'/overseas'}
                 >
                   Overseas
                 </Link>

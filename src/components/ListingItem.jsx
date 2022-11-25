@@ -6,10 +6,7 @@ import { FaBath } from 'react-icons/fa';
 function ListingItem({ listing, id, onDelete }) {
   return (
     <li className='category__listing'>
-      <Link
-        to={`/category/${listing.type}/${id}`}
-        className='category__listing--link'
-      >
+      <Link to={`/category/${listing.type}/${id}`}>
         <img
           src={listing.imgUrls[0]}
           alt={listing.name}
@@ -17,9 +14,7 @@ function ListingItem({ listing, id, onDelete }) {
         />
       </Link>
       <div className='category__listing--details'>
-        <h3 className='category__listing--details heading-tertiary'>
-          {listing.name}
-        </h3>
+        <h3 className='category__listing--details--h3'>{listing.name}</h3>
         <p className='category__listing--details--desc'>
           {listing.description}
         </p>
@@ -35,18 +30,22 @@ function ListingItem({ listing, id, onDelete }) {
           {listing.type === 'rent' && ' / Month'}
         </p>
         <div className='category__listing--details--info'>
-          <FaBed />
-          <p className='category__listing--details--info--text'>
-            {listing.bedrooms > 1
-              ? `${listing.bedrooms} Bedrooms`
-              : '1 Bedroom'}
-          </p>
-          <FaBath />
-          <p className='category__listing--details--info--text'>
-            {listing.bathrooms > 1
-              ? `${listing.bathrooms} Bathrooms`
-              : '1 Bathroom'}
-          </p>
+          <div className='category__listing--details--info--bed'>
+            <FaBed />
+            <p className='category__listing--details--info--bed--text'>
+              {listing.bedrooms > 1
+                ? `${listing.bedrooms} Bedrooms`
+                : '1 Bedroom'}
+            </p>
+          </div>
+          <div className='category__listing--details--info--bath'>
+            <FaBath />
+            <p className='category__listing--details--info--bath--text'>
+              {listing.bathrooms > 1
+                ? `${listing.bathrooms} Bathrooms`
+                : '1 Bathroom'}
+            </p>
+          </div>
         </div>
       </div>
       {onDelete && (
