@@ -1,4 +1,5 @@
 .profile {
+  display: flex;
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -21,6 +22,45 @@
       @include breakpoint(md) {
         width: 85%;
         margin: 0 auto;
+      }
+    }
+  }
+  &__createList {
+    border-top: 1px solid $color-grey-dark-1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    &--heading {
+      margin-top: 5rem;
+      font-weight: 200;
+    }
+    &--p {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+    &--link {
+      display: flex;
+      align-items: center;
+
+      justify-content: center;
+      color: $color-grey-dark-3;
+      border: 1px solid $color-grey-dark-1;
+      border-radius: 4px;
+      padding: 1.5rem 2rem;
+      font-size: $default-font-size;
+      margin-top: 1rem;
+      width: 100%;
+      transition: all 0.3s;
+      &:hover {
+        background-color: $color-grey-light-3;
+        border: none;
+      }
+      &--btn {
+        text-align: center;
+        cursor: pointer;
+        text-transform: uppercase;
       }
     }
   }

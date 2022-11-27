@@ -1,0 +1,122 @@
+.createList {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: $color-grey-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__bdy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: $color-grey-light-3;
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+    &__hdng {
+      font-size: 2rem;
+      font-weight: 200;
+    }
+    &__frm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
+      font-size: $default-font-size;
+      border: 1px solid $color-grey-dark-1;
+      border-radius: 5px;
+
+      width: 80%;
+      @include breakpoint(md) {
+        width: 40%;
+      }
+      &--lbl {
+        display: block;
+        margin-top: 1rem;
+      }
+      &__btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        &--btn {
+          border: 1px solid $color-white;
+          padding: 1rem 2rem;
+          border-radius: 4px;
+          text-transform: uppercase;
+          width: calc(100% - 2rem);
+          text-align: center;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+          &:hover {
+            background-color: $color-grey-light-2;
+          }
+        }
+      }
+      &--ipt {
+        padding: 1rem 2rem;
+        width: 100%;
+        background-color: $color-white;
+        border: none;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      &__rms,
+      &__prc {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      &--txtar {
+        width: 100%;
+        border: none;
+        padding: 1rem 1.5rem;
+        background-color: $color-white;
+        height: 10rem;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      &--sbbtn {
+        margin-top: 1rem;
+        color: $color-white;
+        padding: 1rem 2rem;
+        background-color: $color-link;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.7rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background-color: lighten($color-link, 10%);
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background-color: $color-link;
+  color: $color-white;
+  border: none;
+  &:hover {
+    background-color: lighten($color-link, 10%);
+  }
+}

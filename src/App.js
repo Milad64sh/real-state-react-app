@@ -10,6 +10,7 @@ import Category from './pages/Category';
 import ProfilePage from './pages/ProfilePage';
 import { ThemeProvider } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute';
+import CreateList from './pages/CreateList';
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
+            <Route path='/create-list' element={<CreateList />} />
           </Routes>
         </Router>
         <ToastContainer />
