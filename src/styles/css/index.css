@@ -1284,6 +1284,18 @@ button {
 .createList__bdy__frm--sbbtn:hover {
   background-color: #42b7c1;
 }
+.createList__bdy__bch {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+  padding: 1rem 2rem;
+}
+.createList__bdy__bch--link {
+  color: #33949d;
+  font-size: 1.5rem;
+  text-align: center;
+}
 
 .active {
   background-color: #33949d;

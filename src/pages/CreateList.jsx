@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   getStorage,
   ref,
@@ -12,8 +12,12 @@ import { db } from '../firebase.config';
 import { v4 as uuidv4 } from 'uuid';
 // COMPONENTS
 import Spinner from '../components/Spinner';
+// ICONS
+import { BsArrowBarLeft } from 'react-icons/bs';
 
 function CreateList() {
+  // eslint-disable-next-line
+  const [geoLocationEnabled, setGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -28,6 +32,8 @@ function CreateList() {
     regularPrice: 0,
     discountedPrice: 0,
     images: {},
+    latitude: 0,
+    longitude: 0,
   });
 
   const {
@@ -43,11 +49,13 @@ function CreateList() {
     regularPrice,
     discountedPrice,
     images,
+    latitude,
+    longitude,
   } = formData;
 
   const auth = getAuth();
   const navigate = useNavigate();
-  const isMounted = useRef();
+  const isMounted = useRef(true);
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
@@ -66,6 +74,17 @@ function CreateList() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    let geolocation = {};
+    let location;
+    if (geoLocationEnabled) {
+      // billing account for google cloud should be created
+    } else {
+      geolocation.lat = latitude;
+      geolocation.lng = longitude;
+      // eslint-disable-next-line
+      location = address;
+    }
     // STORE IMAGES IN FIREBASE
     const StoreImage = async (image) => {
       return new Promise((resolve, reject) => {
@@ -87,21 +106,16 @@ function CreateList() {
               case 'running':
                 console.log('Upload is running');
                 break;
+              default:
+                break;
             }
           },
           (error) => {
-            switch (error.code) {
-              case 'storage/unauthorized':
-                break;
-              case 'storage/canceled':
-                break;
-              case 'storage/unknown':
-                break;
-            }
+            reject(error);
           },
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log('File available at', downloadURL);
+              resolve(downloadURL);
             });
           }
         );
@@ -117,17 +131,17 @@ function CreateList() {
     const formDataCopy = {
       ...formData,
       imgUrls,
+      geolocation,
       timestamp: serverTimestamp(),
     };
 
     delete formDataCopy.images;
+    delete formDataCopy.address;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
     setLoading(false);
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
-
-    setLoading(false);
   };
   const onMutate = (e) => {
     let boolean = null;
@@ -161,7 +175,6 @@ function CreateList() {
             Create a listing
           </h2>
         </header>
-
         <form onSubmit={onSubmit} className='createList__bdy__frm'>
           <label className='createList__bdy__frm--lbl'> Sell / Rent</label>
           <div className='createList__bdy__frm__btns'>
@@ -388,6 +401,11 @@ function CreateList() {
             submit
           </button>
         </form>
+        <div className='createList__bdy__bch'>
+          <Link className='createList__bdy__bch--link' to={'/'}>
+            Back to Home <BsArrowBarLeft />
+          </Link>
+        </div>
       </div>
     </div>
   );

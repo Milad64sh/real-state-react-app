@@ -53,7 +53,7 @@ function Explore() {
               <div className='row__unit--buy--link'>
                 <Link
                   className='row__unit--buy--link--text'
-                  to={'/category/buy'}
+                  to={'/category/sale'}
                 >
                   Buy
                 </Link>

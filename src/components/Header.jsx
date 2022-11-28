@@ -8,7 +8,7 @@ function Header() {
           <span className='heading-primary--sub'>find your</span>
           <span className='heading-primary--main'>home</span>
         </h1>
-        <Link to={'/category/buy'} className='btn btn--hero'>
+        <Link to={'/category/sale'} className='btn btn--hero'>
           Buy
         </Link>
         <Link to={'/category/rent'} className='btn btn--hero'>

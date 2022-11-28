@@ -109,6 +109,18 @@
         }
       }
     }
+    &__bch {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: end;
+      padding: 1rem 2rem;
+      &--link {
+        color: $color-link;
+        font-size: $default-font-size;
+        text-align: center;
+      }
+    }
   }
 }
 
