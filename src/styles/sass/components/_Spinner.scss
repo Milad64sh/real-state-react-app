@@ -1,0 +1,28 @@
+.bouncer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  &__ball {
+    width: 10px;
+    height: 10px;
+    background-color: $color-grey-dark-3;
+    border-radius: 50%;
+    &:not(:last-child) {
+      margin-right: 0.25rem;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    animation: spinner 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
+      alternate;
+  }
+}

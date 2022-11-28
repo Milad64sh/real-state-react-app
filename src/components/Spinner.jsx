@@ -1,5 +1,14 @@
 function Spinner() {
-  return <h3>loading...</h3>;
+  return (
+    <>
+      <div className='bouncer'>
+        <div className='bouncer__ball'></div>
+        <div className='bouncer__ball'></div>
+        <div className='bouncer__ball'></div>
+        <div className='bouncer__ball'></div>
+      </div>
+    </>
+  );
 }
 
 export default Spinner;

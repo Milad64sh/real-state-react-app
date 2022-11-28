@@ -49,3 +49,14 @@
     transform: translateY(0px);
   }
 }
+
+@keyframes spinner {
+  from {
+    background-color: $color-grey-dark-3;
+    // transform: translateY(0);
+  }
+  to {
+    background-color: $color-grey-dark-2;
+    // transform: translateY(-100px);
+  }
+}
