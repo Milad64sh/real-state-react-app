@@ -1,0 +1,94 @@
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 2rem;
+  &__slide {
+    width: 100%;
+    height: 50vh;
+
+    img {
+      width: 100vw;
+      height: 50vh;
+      object-fit: cover;
+
+      @include breakpoint(lg) {
+        width: 50vw;
+        height: 50vh;
+        object-fit: center;
+
+        padding-right: 1rem;
+      }
+      @include breakpoint(md) {
+        height: 50vh;
+      }
+    }
+    @include breakpoint(lg) {
+      width: 50vw;
+      height: 50vh;
+    }
+  }
+  &__details {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    @include breakpoint(lg) {
+      justify-content: center;
+      width: 40vw;
+      padding-left: 1rem;
+      border-left: 1px solid $color-grey-dark-2;
+    }
+
+    &--hdng {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+      &--share {
+        color: $color-link;
+        font-size: $default-font-size-lg;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        background-color: $color-white;
+        text-align: center;
+      }
+    }
+    &--lcn,
+    &--tp,
+    &--dsPrc {
+      font-size: $default-font-size;
+    }
+    &--list {
+      font-size: $default-font-size;
+    }
+    &--tlt {
+      font-size: $default-font-size;
+    }
+    &--btn {
+      width: 30rem;
+      border: 1px solid $color-link;
+      padding: 1rem 2rem;
+      color: $color-link;
+      font-size: $default-font-size;
+      text-transform: uppercase;
+      letter-spacing: $spacing-ltt;
+      border-radius: 4px;
+      transition: all 0.3s;
+      text-align: center;
+      margin: 1rem 0;
+      &:hover {
+        background-color: $color-link;
+        color: $color-white;
+      }
+      &::after {
+        transform: translate(0.98);
+      }
+    }
+  }
+  @include breakpoint(lg) {
+    flex-direction: row;
+  }
+}

@@ -24,7 +24,7 @@ function App() {
             </Route>
             <Route path='/category/:categoryName' element={<Category />} />
             <Route path='/about-us' element={<AboutUs />} />
-            <Route path='/contact/:landloardId' element={<Contact />} />
+            <Route path='/contact/:landlordId' element={<Contact />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
             <Route path='/create-list' element={<CreateList />} />
             <Route

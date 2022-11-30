@@ -1,9 +1,8 @@
-.bouncer {
-  margin-top: 2rem;
+.spinner {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
-
+  margin-top: 2rem;
   &__ball {
     width: 10px;
     height: 10px;

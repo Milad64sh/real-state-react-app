@@ -21,7 +21,7 @@ body {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
@@ -294,29 +294,29 @@ button {
   text-transform: uppercase;
 }
 
-.bouncer {
-  margin-top: 2rem;
+.spinner {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
+  margin-top: 2rem;
 }
-.bouncer__ball {
+.spinner__ball {
   width: 10px;
   height: 10px;
   background-color: #333;
   border-radius: 50%;
   animation: spinner 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
 }
-.bouncer__ball:not(:last-child) {
+.spinner__ball:not(:last-child) {
   margin-right: 0.25rem;
 }
-.bouncer__ball:nth-child(2) {
+.spinner__ball:nth-child(2) {
   animation-delay: 0.1s;
 }
-.bouncer__ball:nth-child(3) {
+.spinner__ball:nth-child(3) {
   animation-delay: 0.2s;
 }
-.bouncer__ball:nth-child(4) {
+.spinner__ball:nth-child(4) {
   animation-delay: 0.3s;
 }
 
@@ -545,7 +545,11 @@ button {
 .header {
   position: absolute;
   height: 100vh;
-  background-image: linear-gradient(rgba(238, 238, 238, 0.6), rgba(51, 51, 51, 0.6)), url("../../assets/jpg/hero/hero-2.jpg");
+  background-image: linear-gradient(
+      rgba(238, 238, 238, 0.6),
+      rgba(51, 51, 51, 0.6)
+    ),
+    url('../../assets/jpg/hero/hero-2.jpg');
   background-size: cover;
   background-position: top;
   position: relative;
@@ -620,7 +624,7 @@ button {
   display: flex;
   height: 25rem;
   width: 100%;
-  background: url("../../assets/jpg/hero/hero-4.jpg") no-repeat center/cover;
+  background: url('../../assets/jpg/hero/hero-4.jpg') no-repeat center/cover;
   background-attachment: fixed;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -638,7 +642,12 @@ button {
   font-weight: 300;
   letter-spacing: 0.5rem;
   background-size: 220%;
-  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  background-image: linear-gradient(
+    110deg,
+    rgba(51, 148, 157, 0.7) 0%,
+    rgba(51, 148, 157, 0.7) 50%,
+    #eee 50%
+  );
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
@@ -667,7 +676,7 @@ button {
   display: flex;
   height: 25rem;
   width: 100%;
-  background: url("../../assets/jpg/hero/hero-5.jpg") no-repeat center/cover;
+  background: url('../../assets/jpg/hero/hero-5.jpg') no-repeat center/cover;
   background-attachment: fixed;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -685,7 +694,12 @@ button {
   font-weight: 300;
   letter-spacing: 0.5rem;
   background-size: 220%;
-  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  background-image: linear-gradient(
+    110deg,
+    rgba(51, 148, 157, 0.7) 0%,
+    rgba(51, 148, 157, 0.7) 50%,
+    #eee 50%
+  );
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
@@ -714,7 +728,7 @@ button {
   display: flex;
   height: 25rem;
   width: 100%;
-  background: url("../../assets/jpg/hero/hero-3.jpg") no-repeat center/cover;
+  background: url('../../assets/jpg/hero/hero-3.jpg') no-repeat center/cover;
   background-attachment: fixed;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -732,7 +746,12 @@ button {
   font-weight: 300;
   letter-spacing: 0.5rem;
   background-size: 220%;
-  background-image: linear-gradient(110deg, rgba(51, 148, 157, 0.7) 0%, rgba(51, 148, 157, 0.7) 50%, #eee 50%);
+  background-image: linear-gradient(
+    110deg,
+    rgba(51, 148, 157, 0.7) 0%,
+    rgba(51, 148, 157, 0.7) 50%,
+    #eee 50%
+  );
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
@@ -887,7 +906,7 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .signIn__form,
-.signUp__form {
+  .signUp__form {
     width: 45rem;
   }
 }
@@ -941,7 +960,7 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .signIn__form__OAuth,
-.signUp__form__OAuth {
+  .signUp__form__OAuth {
     width: 80%;
   }
 }
@@ -987,7 +1006,7 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .signIn__form__group--input,
-.signUp__form__group--input {
+  .signUp__form__group--input {
     width: 95%;
   }
 }
@@ -1020,7 +1039,7 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .signIn__form__group--label,
-.signUp__form__group--label {
+  .signUp__form__group--label {
     margin-left: 1rem;
   }
 }
@@ -1030,7 +1049,7 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .signIn__form__group--btn,
-.signUp__form__group--btn {
+  .signUp__form__group--btn {
     width: 85%;
     margin: 0 auto;
   }
@@ -1284,7 +1303,8 @@ button {
 .createList__bdy__frm--ipt:focus {
   outline: none;
 }
-.createList__bdy__frm__rms, .createList__bdy__frm__prc {
+.createList__bdy__frm__rms,
+.createList__bdy__frm__prc {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -1340,4 +1360,122 @@ button {
   background-color: #42b7c1;
 }
 
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 2rem;
+}
+.list__slide {
+  width: 100%;
+  height: 50vh;
+}
+.list__slide img {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+}
+@media only screen and (min-width: 64em) {
+  .list__slide img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: center;
+    padding-right: 1rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .list__slide img {
+    height: 50vh;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .list__slide {
+    width: 50vw;
+    height: 50vh;
+  }
+}
+.list__details {
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+}
+@media only screen and (min-width: 64em) {
+  .list__details {
+    justify-content: center;
+    width: 40vw;
+    padding-left: 1rem;
+    border-left: 1px solid #999;
+  }
+}
+.list__details--hdng {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.list__details--hdng--share {
+  color: #33949d;
+  font-size: 2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+}
+.list__details--lcn,
+.list__details--tp,
+.list__details--dsPrc {
+  font-size: 1.5rem;
+}
+.list__details--list {
+  font-size: 1.5rem;
+}
+.list__details--tlt {
+  font-size: 1.5rem;
+}
+.list__details--btn {
+  width: 30rem;
+  border: 1px solid #33949d;
+  padding: 1rem 2rem;
+  color: #33949d;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-align: center;
+  margin: 1rem 0;
+}
+.list__details--btn:hover {
+  background-color: #33949d;
+  color: #fff;
+}
+.list__details--btn::after {
+  transform: translate(0.98);
+}
+@media only screen and (min-width: 64em) {
+  .list {
+    flex-direction: row;
+  }
+}
+
+.swiper-button-prev {
+  background-image: url('../../assets/jpg/icons/left-arrow-4841.png');
+}
+.swiper-button-next {
+  background-image: url('../../assets/jpg/icons/arrow-203.png');
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}
 /*# sourceMappingURL=index.css.map */
