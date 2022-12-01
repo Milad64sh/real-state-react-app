@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { db } from '../firebase.config';
-import Spinner from '../components/Spinner';
 import { BsFillShareFill } from 'react-icons/bs';
 import { EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,6 +11,8 @@ import 'swiper/components/navigation/navigation.scss';
 import SwiperCore, { Navigation } from 'swiper';
 
 // COMPONENT
+import Spinner from '../components/Spinner';
+
 SwiperCore.use([Navigation, EffectFade]);
 function Listing() {
   const [listing, setListing] = useState(null);

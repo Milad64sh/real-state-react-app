@@ -13,6 +13,7 @@
       "regularPrice": 2500,
       "discountedPrice": 2000,
       "location": "8601 West Peachtree St Stratford, CT 06614",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum aperiam, ullam officiis natus asperiores necessitatibus, mollitia fugit, est cumque vitae molestias? Eveniet vitae alias tempora! Quas sed maxime optio consectetur.",
       "geolocation": {
         "lat": "41.205590",
         "lng": "-73.150530"
