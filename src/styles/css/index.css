@@ -761,9 +761,10 @@ button {
 .category {
   display: flex;
   background-color: #f7f7f7;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .category__heading {
   font-size: 3rem;
@@ -775,7 +776,7 @@ button {
   border-bottom: 1px solid #999;
   flex-direction: column;
   align-items: center;
-  margin: 0 2rem;
+  margin-bottom: 4rem;
   justify-content: center;
   width: 70vw;
 }
@@ -1464,6 +1465,90 @@ button {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+  background-color: #777;
+}
+.contact__hdng {
+  color: #fff;
+}
+.contact__ldld {
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  width: 90vw;
+}
+@media only screen and (min-width: 48em) {
+  .contact__ldld {
+    width: 70vw;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .contact__ldld {
+    width: 50vw;
+  }
+}
+.contact__ldld__name {
+  font-size: 2rem;
+  border-bottom: 1px solid #777;
+}
+.contact__ldld__frm {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.contact__ldld__frm--lbl {
+  display: block;
+  font-size: 1.5rem;
+}
+.contact__ldld__frm--txtar {
+  display: block;
+  width: 100%;
+  border: 1px solid #eee;
+  height: 10rem;
+  padding: 1rem 2rem;
+}
+.contact__ldld__frm--txtar:focus {
+  outline: none;
+}
+.contact__ldld__frm__a {
+  background-color: transparent;
+  border: 2px solid #33949d;
+  color: #33949d;
+  letter-spacing: 0.25rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.contact__ldld__frm__a:hover {
+  background-color: #33949d;
+  border: 2px solid none;
+  color: #fff;
+}
+.contact__ldld__frm__a--btn {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.contact__ldld__bch {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+  padding: 1rem 2rem;
+}
+.contact__ldld__bch--lnk {
+  color: #33949d;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.css.map */
