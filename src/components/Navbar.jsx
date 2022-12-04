@@ -49,7 +49,7 @@ function Navbar() {
 
   // NAV SCROLL CHANGE
   const navScroll = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 200) {
       setScrolled(true);
     } else {
       setScrolled(false);

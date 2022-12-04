@@ -2,6 +2,7 @@
   display: flex;
   background-color: $color-grey-light;
   height: 100%;
+  width: 100vw;
   align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -10,86 +11,108 @@
     font-weight: 200;
     margin-top: 5rem;
   }
-  &__listing {
-    display: flex;
-    border-bottom: 1px solid $color-grey-dark-2;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
-    justify-content: center;
-    width: 70vw;
-
-    @include breakpoint(lg) {
-      display: flex;
-      border-bottom: 1px solid $color-grey-dark-2;
-      border-right: 1px solid $color-grey-dark-2;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      width: 70vw;
+  &__cnt {
+    &__close {
+      position: absolute;
+      right: 0;
+      top: 50%;
     }
-
-    &--img {
-      height: 25rem;
-      margin-right: 2rem;
-      padding-bottom: 0;
-      display: block;
-
-      cursor: pointer;
-      transition: all 0.3s;
-      &:hover {
-        transform: scale(1.02);
-      }
-      @include breakpoint(lg) {
-        border-right: 1px solid $color-grey-dark-2;
-      }
-    }
-    &--details {
+    &__listing {
       display: flex;
-      justify-content: center;
+      border: 1px solid $color-grey-light-3;
+      background-color: $color-grey-light-2;
+      border-radius: 4px;
       flex-direction: column;
-      padding-right: 1rem;
+      align-items: center;
+      margin-bottom: 4rem;
+
+      justify-content: center;
       width: 70vw;
+
       @include breakpoint(lg) {
         display: flex;
-        border-bottom: none;
-      }
-
-      &--h3 {
-        margin-bottom: 1rem;
-        font-size: 2rem;
-        font-weight: 400;
-        letter-spacing: 0.5rem;
-      }
-      &--desc {
-        font-size: 1.5rem;
-        font-weight: 100;
-      }
-      &--price {
-        font-size: 2rem;
-        font-weight: 700;
-        color: $color-link;
-      }
-      &--info {
-        display: flex;
+        border-radius: 4px;
         align-items: center;
+        justify-content: center;
+        flex-direction: row;
 
-        font-size: 1.5rem;
-        &--bed {
-          display: flex;
-          margin-right: 2rem;
-          align-items: center;
-          justify-content: space-around;
-          &--text {
-            padding-left: 0.5rem;
-          }
+        width: 52vw;
+      }
+
+      &--img {
+        height: 25rem;
+        margin: 0.25rem 0 0.25rem 0;
+        padding-bottom: 0;
+        display: block;
+
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          transform: scale(1.02);
         }
-        &--bath {
+        @include breakpoint(lg) {
+          border-right: 1px solid $color-grey-dark-2;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          margin: 0.25rem 0 0.25rem 0.25rem;
+        }
+      }
+      &--details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 2rem;
+        width: 70vw;
+        @include breakpoint(lg) {
+          display: flex;
+          border-bottom: none;
+        }
+
+        &--h3 {
+          margin-bottom: 1rem;
+          font-size: 2rem;
+          font-weight: 400;
+          letter-spacing: 0.5rem;
+        }
+        &--desc {
+          font-size: 1.5rem;
+          font-weight: 100;
+        }
+        &--price {
+          font-size: 2rem;
+          font-weight: 700;
+          color: $color-link;
+        }
+        &--info {
           display: flex;
           align-items: center;
-          justify-content: space-around;
-          &--text {
-            padding-left: 0.5rem;
+          font-size: 1.5rem;
+
+          &--bed {
+            display: flex;
+            margin-right: 2rem;
+            align-items: center;
+            justify-content: space-around;
+            &--text {
+              padding-left: 0.5rem;
+            }
+          }
+          &--bath {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            &--text {
+              padding-left: 0.5rem;
+            }
+          }
+          &--trash {
+            color: $color-error;
+            margin-left: auto;
+            cursor: pointer;
+            // transition: transform 0.2s ease;
+            &:hover {
+              transform: scale(1.1);
+            }
           }
         }
       }

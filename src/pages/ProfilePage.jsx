@@ -13,6 +13,7 @@ import {
 import { db } from '../firebase.config';
 import { Link, useNavigate } from 'react-router-dom';
 import ThemeContext from '../context/ThemeContext';
+// ICONS
 import { FiEdit } from 'react-icons/fi';
 
 // COMPONENTS
