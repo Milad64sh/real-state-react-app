@@ -105,17 +105,46 @@
               padding-left: 0.5rem;
             }
           }
-          &--trash {
-            color: $color-error;
+          &--ctr {
+            display: flex;
             margin-left: auto;
-            cursor: pointer;
-            // transition: transform 0.2s ease;
-            &:hover {
-              transform: scale(1.1);
+            justify-content: space-between;
+            &--trash {
+              color: $color-delete;
+              margin-right: 1rem;
+              cursor: pointer;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+            &--edit {
+              color: $color-link;
+              cursor: pointer;
+              &:hover {
+                transform: scale(1.1);
+              }
             }
           }
         }
       }
+    }
+  }
+  &__ldmr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    color: $color-link;
+    font-size: $default-font-size;
+    cursor: pointer;
+    &--p {
+      padding-bottom: 0.5rem;
+    }
+    &--icn {
+      margin-left: 0.5rem;
+    }
+    &:hover {
+      font-weight: bold;
     }
   }
 }

@@ -11,7 +11,7 @@ import {
   deleteDoc,
 } from 'firebase/firestore';
 import { db } from '../firebase.config';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ThemeContext from '../context/ThemeContext';
 // ICONS
 import { FiEdit } from 'react-icons/fi';
@@ -26,6 +26,7 @@ function ProfilePage({ item }) {
   const [loading, setLoading] = useState(true);
   const [listings, setListings] = useState(null);
   const auth = getAuth();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
@@ -61,7 +62,20 @@ function ProfilePage({ item }) {
       [e.target.id]: e.target.value,
     }));
   };
-  const onDelete = () => {};
+
+  // DELETE
+  const onDelete = async (listingId) => {
+    if (window.confirm('Are you sure you want to delete?')) {
+      await deleteDoc(doc(db, 'listings', listingId));
+      const updatedListings = listings.filter(
+        (listing) => listing.id !== listingId
+      );
+      setListings(updatedListings);
+    }
+  };
+
+  // EDIT
+  const onEdit = (listingId) => navigate(`/edit-list/${listingId}`);
   const submitEditForm = async (e) => {
     e.preventDefault();
     editDetail();
@@ -184,6 +198,7 @@ function ProfilePage({ item }) {
                   listing={listing.data}
                   id={listing.id}
                   onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
                 />
               ))}
             </ul>

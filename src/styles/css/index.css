@@ -867,13 +867,43 @@ button {
 .category__cnt__listing--details--info--bath--text {
   padding-left: 0.5rem;
 }
-.category__cnt__listing--details--info--trash {
-  color: #db0b0b;
+.category__cnt__listing--details--info--ctr {
+  display: flex;
   margin-left: auto;
+  justify-content: space-between;
+}
+.category__cnt__listing--details--info--ctr--trash {
+  color: #bd2121;
+  margin-right: 1rem;
   cursor: pointer;
 }
-.category__cnt__listing--details--info--trash:hover {
+.category__cnt__listing--details--info--ctr--trash:hover {
   transform: scale(1.1);
+}
+.category__cnt__listing--details--info--ctr--edit {
+  color: #33949d;
+  cursor: pointer;
+}
+.category__cnt__listing--details--info--ctr--edit:hover {
+  transform: scale(1.1);
+}
+.category__ldmr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  color: #33949d;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.category__ldmr--p {
+  padding-bottom: 0.5rem;
+}
+.category__ldmr--icn {
+  margin-left: 0.5rem;
+}
+.category__ldmr:hover {
+  font-weight: bold;
 }
 
 .signIn,
@@ -1365,11 +1395,25 @@ button {
   align-items: center;
   justify-content: end;
   padding: 1rem 2rem;
+  color: #33949d;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.createList__bdy__bch:hover {
+  font-weight: bold;
 }
 .createList__bdy__bch--link {
   color: #33949d;
   font-size: 1.5rem;
   text-align: center;
+  padding-bottom: 0.5rem;
+}
+.createList__bdy__bch--icon {
+  text-align: center;
+  margin-left: 1rem;
+}
+.createList__bdy__bch--icon:hover {
+  font-weight: bold;
 }
 
 .active {

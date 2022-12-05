@@ -115,10 +115,24 @@
       align-items: center;
       justify-content: end;
       padding: 1rem 2rem;
+      color: $color-link;
+      font-size: $default-font-size;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
       &--link {
         color: $color-link;
         font-size: $default-font-size;
         text-align: center;
+        padding-bottom: 0.5rem;
+      }
+      &--icon {
+        text-align: center;
+        margin-left: 1rem;
+        &:hover {
+          font-weight: bold;
+        }
       }
     }
   }

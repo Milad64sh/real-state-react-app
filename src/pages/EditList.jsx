@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { doc, updateDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase.config';
 import { v4 as uuidv4 } from 'uuid';
 // COMPONENTS
@@ -15,10 +15,11 @@ import Spinner from '../components/Spinner';
 // ICONS
 import { BsArrowBarLeft } from 'react-icons/bs';
 
-function CreateList() {
+function EditList() {
   // eslint-disable-next-line
   const [geoLocationEnabled, setGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [listing, setListing] = useState(false);
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
@@ -55,7 +56,29 @@ function CreateList() {
 
   const auth = getAuth();
   const navigate = useNavigate();
+  const params = useParams();
   const isMounted = useRef(true);
+
+  // FETCH LISTING TO EDIT
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchListing = async () => {
+      const docRef = doc(db, 'listings', params.listingId);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setListing(docSnap.data());
+        setFormData({ ...docSnap.data(), address: docSnap.data().location });
+        setLoading(false);
+      } else {
+        navigate('/');
+      }
+    };
+    fetchListing();
+  }, [params.listingId, navigate]);
+
+  // SET USER REF TO LOGGED IN USER
+
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
@@ -139,8 +162,9 @@ function CreateList() {
     delete formDataCopy.address;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
-    const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
-    setLoading(false);
+    // update listing
+    const docRef = doc(db, 'listings', params.listingId);
+    await updateDoc(docRef, formDataCopy);
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
   const onMutate = (e) => {
@@ -172,7 +196,7 @@ function CreateList() {
       <div className='createList__bdy'>
         <header>
           <h2 className='createList__bdy__hdng heading-secondary'>
-            Create a listing
+            Edit listing
           </h2>
         </header>
         <form onSubmit={onSubmit} className='createList__bdy__frm'>
@@ -414,4 +438,4 @@ function CreateList() {
   );
 }
 
-export default CreateList;
+export default EditList;

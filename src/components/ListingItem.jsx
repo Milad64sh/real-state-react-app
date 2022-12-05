@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaBed } from 'react-icons/fa';
-import { FaBath } from 'react-icons/fa';
-
-function ListingItem({ listing, id, onDelete }) {
+import { FaTrashAlt, FaBed, FaBath } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
+function ListingItem({ listing, id, onEdit, onDelete }) {
   return (
     <>
       <div className='category__cnt'>
@@ -22,7 +20,7 @@ function ListingItem({ listing, id, onDelete }) {
             <p className='category__cnt__listing--details--desc'>
               {listing.description}
             </p>
-            <p className='categor__cnty__listing--details--price'>
+            <p className='category__cnt__listing--details--price'>
               $
               {listing.offer
                 ? listing.discountedPrice
@@ -50,12 +48,17 @@ function ListingItem({ listing, id, onDelete }) {
                     : '1 Bathroom'}
                 </p>
               </div>
-              <div className='category__cnt__listing--details--info--trash'>
-                {onDelete && (
-                  <FaTrashAlt
-                    onClick={() => onDelete(listing.id, listing.name)}
-                  />
-                )}
+              <div className='category__cnt__listing--details--info--ctr'>
+                <div className='category__cnt__listing--details--info--ctr--trash'>
+                  {onDelete && (
+                    <FaTrashAlt
+                      onClick={() => onDelete(listing.id, listing.name)}
+                    />
+                  )}
+                </div>
+                <div className='category__cnt__listing--details--info--ctr--edit'>
+                  {onEdit && <FiEdit onClick={() => onEdit(id)} />}
+                </div>
               </div>
             </div>
           </div>
